@@ -1,13 +1,10 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Motorcycle() {
 	return (
-		<section className='content motorcycle'>
-			<figure></figure>
-			<div className='inner'>
-				<h1>motorcycle</h1>
-			</div>
-		</section>
+		<Layout name={'Motorcycle'}>
+			<p>Motorcycle 컨텐츠</p>
+		</Layout>
 	);
 }
 

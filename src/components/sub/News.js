@@ -1,13 +1,10 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function News() {
 	return (
-		<section className='content news'>
-			<figure></figure>
-			<div className='inner'>
-				<h1>News</h1>
-			</div>
-		</section>
+		<Layout name={'News'}>
+			<p>News 컨텐츠</p>
+		</Layout>
 	);
 }
 
