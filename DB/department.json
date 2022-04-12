@@ -1,0 +1,64 @@
+{
+   "data": [
+      {
+         "name": "Yoshinori Kanehana",
+         "position": "Director",
+         "pic": "department/director1.jpg"
+      },
+      {
+         "name": "Yasuhiko Hashimoto",
+         "position": "Director",
+         "pic": "department/offcer.jpg"
+      },
+      {
+         "name": "Sukeyuki Namiki",
+         "position": "Representative Director",
+         "pic": "department/executiveofficer.jpg"
+      },
+      {
+         "name": "Katsuya Yamamoto",
+         "position": "Representative Director",
+         "pic": "department/executiveofficerAssistant.jpg"
+      },
+      {
+         "name": "Hiroshi Nakatani",
+         "position": "Director Managing Executive Officer",
+         "pic": "department/directormanaginexecutiveofficer.jpg"
+      },
+      {
+         "name": "Akio Nekoshima",
+         "position": "Outside Director",
+         "pic": "department/OutsideDirector(Audit1).jpg"
+      },
+      {
+         "name": "Hideo Tsujimura",
+         "position": "Outside Director",
+         "pic": "department/OutsideDirector(Audit2).jpg"
+      },
+      {
+         "name": "Yoshiaki Tamura",
+         "position": "Outside Director",
+         "pic": "department/OutsideDirector(Audit3).jpg"
+      },
+      {
+         "name": "Katsuyoshi Fukuma",
+         "position": "Supervisory Committee Member",
+         "pic": "department/OutsideDirector1.jpg"
+      },
+      {
+         "name": "Jenifer Rogers",
+         "position": "Supervisory Committee Member",
+         "pic": "department/OutsideDirector2.jpg"
+      },
+      {
+         "name": "Atsuko Ishii",
+         "position": "Supervisory Committee Member",
+         "pic": "department/OutsideDirector3.jpg"
+      },
+      {
+         "name": "Ryoichi Saito",
+         "position": "Supervisory Committee Member",
+         "pic": "department/Director(Audit2).jpg"
+      }
+   ]
+}
