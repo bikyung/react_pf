@@ -1,71 +1,130 @@
-.Department {
+.department {
+	background: #fff;
 	.sub_visual {
 		width: 100%;
-		height: 500px;
 	}
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
 
 		> h2 {
+			margin: 50px 0;
 			text-align: left;
-			padding-top: 30px;
-			border-top: 3px solid #000;
+			font: bold 40px/1 'orbitron';
+			letter-spacing: 2px;
 		}
-		.wrap1 {
-			width: 100%;
-			.common {
-				> h2 {
-					text-align: center;
-					font: bold 24px/1 'GmarketSansMedium';
-					margin-bottom: 20px;
-				}
 
-				span {
+		.wrap {
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			article {
+				&::after {
+					content: '';
 					display: block;
-					margin: 20px auto;
-					width: 250px;
-					height: 30px;
-					border-bottom: none;
+					clear: both;
+				}
+				&:nth-of-type(2),
+				&:nth-of-type(4) {
+					.pic {
+						float: right;
+					}
+				}
+				.pic {
+					float: left;
+					width: 590px;
+					height: 400px;
+
+					img {
+						width: 100%;
+						height: 100%;
+					}
 				}
 
-				.wrap1 {
-					width: 100%;
-					text-align: center;
+				.textInfo {
+					float: left;
+					width: 590px;
+					height: 400px;
+					padding: 60px;
 
-					article {
-						display: inline-block;
-						cursor: pointer;
+					> h2 {
+						margin-bottom: 30px;
+					}
 
-						.pic1 {
-							width: 150px;
-							height: 150px;
-							margin: 0 50px;
+					p {
+						font: normal 18px/1.3 'arial';
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+	.organization {
+		.inner {
+			> h2 {
+				text-align: left;
+				padding-top: 30px;
+				border-top: 3px solid #000;
+			}
+			.wrap1 {
+				width: 100%;
+				.common {
+					> h2 {
+						text-align: center;
+						font: bold 24px/1 'GmarketSansMedium';
+						margin-bottom: 20px;
+					}
 
-							img {
-								width: 100%;
-								height: 100%;
-								transition: all 0.7s;
-								border-radius: 50%;
-								&:hover {
-									transform: scale(1.1);
+					span {
+						display: block;
+						margin: 20px auto;
+						width: 250px;
+						height: 30px;
+						border-bottom: none;
+					}
+
+					.wrap1 {
+						width: 100%;
+						text-align: center;
+
+						article {
+							display: inline-block;
+							cursor: pointer;
+
+							.pic1 {
+								width: 150px;
+								height: 150px;
+								margin: 0 50px;
+
+								img {
+									width: 100%;
+									height: 100%;
+									transition: all 0.7s;
+									border-radius: 50%;
+									&:hover {
+										transform: scale(1.1);
+									}
 								}
-							}
 
-							h2 {
-								font: bold 16px/1.3 'GmarketSansMedium';
-								color: #999;
-								margin-top: 20px;
-							}
+								h2 {
+									font: bold 16px/1.3 'GmarketSansMedium';
+									color: #999;
+									margin-top: 20px;
+								}
 
-							.sns {
-								display: none;
+								.sns {
+									display: none;
+								}
 							}
 						}
 					}
 				}
 			}
 		}
+
 		.container1 {
 			> h2 {
 				text-align: center;

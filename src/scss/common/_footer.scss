@@ -18,8 +18,9 @@ footer {
 	}
 }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: $tablet) {
 	footer {
+		border-top: none;
 		.inner {
 			width: 100%;
 		}

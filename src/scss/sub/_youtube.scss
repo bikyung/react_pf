@@ -1,0 +1,139 @@
+.Youtube {
+	background: #000;
+	.txt1 {
+		padding-bottom: 30px;
+		h2 {
+			color: #eee;
+			font: bold 24px/1 'pretendard';
+			margin-bottom: 10px;
+		}
+		h3 {
+			color: #eee;
+			font: bold 20px/1 'arial';
+			margin-bottom: 10px;
+		}
+		p {
+			color: #aaa;
+			margin-bottom: 10px;
+			font: 13px/1 'pretendard';
+		}
+		strong {
+			color: #888;
+		}
+	}
+	.youtubeInfo {
+		width: 100%;
+		height: 100vh;
+		padding: 20vh 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
+
+		article {
+			width: 48%;
+			height: 30%;
+			border: 1px solid #4fb627;
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+			margin-bottom: 50px;
+			position: relative;
+			transition: 0.7s;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.1);
+				.con {
+					h2,
+					p {
+						color: #fff;
+					}
+				}
+			}
+
+			.pic {
+				width: 40%;
+				height: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					filter: opacity(0.5);
+					&:hover {
+						filter: opacity(1);
+					}
+				}
+			}
+
+			.con {
+				width: 54%;
+				height: 100%;
+				position: relative;
+
+				h2 {
+					font: bold 16px/1.2 'pretendard';
+					color: #999;
+					margin-bottom: 15px;
+				}
+
+				p {
+					font: 12px/1.2 'pretendard';
+					color: #777;
+				}
+
+				span {
+					font: bold 12px/1 'pretendard';
+					color: #4fb627;
+					position: absolute;
+					bottom: 10px;
+					right: 10px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Youtube {
+		.youtubeInfo {
+			display: block;
+			padding: 0;
+
+			article {
+				width: 100%;
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Youtube {
+		.youtubeInfo {
+			display: block;
+			padding: 0;
+
+			article {
+				width: 100%;
+				height: auto;
+				padding: 20px 10px;
+				flex-direction: column;
+				&:hover {
+					transform: scale(1.05);
+				}
+				.pic {
+					width: 100%;
+				}
+				.con {
+					width: 100%;
+					p {
+						margin-bottom: 40px;
+					}
+				}
+			}
+		}
+	}
+}

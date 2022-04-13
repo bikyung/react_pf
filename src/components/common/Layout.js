@@ -19,10 +19,7 @@ function Layout(props) {
 				<img src={`${path}/img/${props.name}/${props.sub_visual}.jpg`} />
 			</figure>
 
-			<div className='inner'>
-				<h1>{props.sub_title1}</h1>
-				{props.children}
-			</div>
+			<div className='inner'>{props.children}</div>
 		</section>
 	);
 }

@@ -1,0 +1,58 @@
+.Gallery {
+	ul {
+		width: 100%;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		li {
+			width: 20%;
+			float: left;
+			padding: 10px 10px 20px;
+			box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+			transition: 0.7s;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.03);
+			}
+			> .inner {
+				width: 100%;
+				height: 100%;
+				background: #fff;
+				padding: 5px;
+				.pic {
+					width: 100%;
+					height: 180px;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				h2 {
+					font: bold 14px/1.2 'orbitron';
+					letter-spacing: 1px;
+					margin: 10px 0;
+				}
+				h3 {
+					font: normal 12px/1.2 'orbitron';
+					letter-spacing: 1px;
+					position: relative;
+					margin-bottom: 10px;
+					padding-bottom: 5px;
+					border-bottom: 1px solid #999;
+					&::after {
+						content: '>';
+						color: #000;
+						display: block;
+						position: absolute;
+						right: 2px;
+						top: 0;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}

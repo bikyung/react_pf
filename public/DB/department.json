@@ -1,4 +1,26 @@
 {
+   "business": [
+      {
+         "title": "AVIATION",
+         "text": "Sportbike or commercial jet, KHI builds the engines that power both. Since 1937, KHI has been a leading manufacturer of aircrafts and aircraft engines, so to say we were born from jets couldn't be more true. From helicopters and commercial jets to 1,441cc sportbikes and 310-hp Jet Ski® watercraft, it's our technology in the sky that ignites our innovation down below.",
+         "pic": "department/air.jpg"
+      },
+      {
+         "title": "BULLET TRAINS",
+         "text": "You already know KHI builds machines that move people. But, did you know it also builds machines that move thousands of people - all at once? We're talking trains here. From New York City subway cards to Japan's hyper-speed bullet trains, Kawasaki has been in the business since 1906. Whether a 186-mph bullet train or a 1,441cc Ninja ZX-14R motorcycle.KHI likes to believe that the technology that goes into moving thousands of people has a positive effect on how it goes about moving just one.",
+         "pic": "department/train.jpg"
+      },
+      {
+         "title": "ROBOTICS",
+         "text": "If robots are the future, then KHI has been shaping it since 1969 when the company built its first industrial robot. KHI continues to be a leader in the development of robots for a diverse number of processes including: assembly, handling, welding, painting and sealing. Kawasaki robot technology is being used every day to manufacture motorcycles and other products.",
+         "pic": "department/robot.png"
+      },
+      {
+         "title": "MOTORCYCLE ENGINES",
+         "text": "Since KHI built its first motorcycle in 1953, they’ve never stopped pushing technology to arm riders with what they need to dominate the streets. Advanced engineering, exhaustive testing, and tireless passion go into every motorcycle every time rubber hits the road. From industry-first features to the features that have evolved over a long history,KHI’s innovations will never stop feeding the insatiable appetites of riders around the world.",
+         "pic": "department/bike.jpg"
+      }
+   ],
    "data": [
       {
          "name": "Yoshinori Kanehana",
