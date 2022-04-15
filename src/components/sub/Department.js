@@ -21,8 +21,8 @@ function Department(props) {
 			<div className='wrap'>
 				{business.map((business, idx) => {
 					return (
-						<article>
-							<div className='pic' key={idx}>
+						<article key={idx}>
+							<div className='pic'>
 								<img src={`${path}/img/${business.pic}`} />
 							</div>
 							<div className='textInfo'>
