@@ -1,86 +1,89 @@
 {
-   "business": [
-      {
-         "title": "AVIATION",
-         "text": "Sportbike or commercial jet, KHI builds the engines that power both. Since 1937, KHI has been a leading manufacturer of aircrafts and aircraft engines, so to say we were born from jets couldn't be more true. From helicopters and commercial jets to 1,441cc sportbikes and 310-hp Jet Ski® watercraft, it's our technology in the sky that ignites our innovation down below.",
-         "pic": "department/air.jpg"
-      },
-      {
-         "title": "BULLET TRAINS",
-         "text": "You already know KHI builds machines that move people. But, did you know it also builds machines that move thousands of people - all at once? We're talking trains here. From New York City subway cards to Japan's hyper-speed bullet trains, Kawasaki has been in the business since 1906. Whether a 186-mph bullet train or a 1,441cc Ninja ZX-14R motorcycle.KHI likes to believe that the technology that goes into moving thousands of people has a positive effect on how it goes about moving just one.",
-         "pic": "department/train.jpg"
-      },
-      {
-         "title": "ROBOTICS",
-         "text": "If robots are the future, then KHI has been shaping it since 1969 when the company built its first industrial robot. KHI continues to be a leader in the development of robots for a diverse number of processes including: assembly, handling, welding, painting and sealing. Kawasaki robot technology is being used every day to manufacture motorcycles and other products.",
-         "pic": "department/robot.png"
-      },
-      {
-         "title": "MOTORCYCLE ENGINES",
-         "text": "Since KHI built its first motorcycle in 1953, they’ve never stopped pushing technology to arm riders with what they need to dominate the streets. Advanced engineering, exhaustive testing, and tireless passion go into every motorcycle every time rubber hits the road. From industry-first features to the features that have evolved over a long history,KHI’s innovations will never stop feeding the insatiable appetites of riders around the world.",
-         "pic": "department/bike.jpg"
-      }
-   ],
    "data": [
       {
-         "name": "Yoshinori Kanehana",
+         "name": "EMMA",
          "position": "Director",
-         "pic": "department/director1.jpg"
+         "pic": "department/member1.jpg"
       },
       {
-         "name": "Yasuhiko Hashimoto",
+         "name": "",
+         "position": "",
+         "pic": "department/member13.png"
+      },
+      {
+         "name": "SOPHIA",
          "position": "Director",
-         "pic": "department/offcer.jpg"
+         "pic": "department/member2.jpg"
       },
       {
-         "name": "Sukeyuki Namiki",
+         "name": "MADISON",
          "position": "Representative Director",
-         "pic": "department/executiveofficer.jpg"
+         "pic": "department/member3.jpg"
       },
       {
-         "name": "Katsuya Yamamoto",
+         "name": "ISABELLA",
          "position": "Representative Director",
-         "pic": "department/executiveofficerAssistant.jpg"
+         "pic": "department/member4.jpg"
       },
       {
-         "name": "Hiroshi Nakatani",
+         "name": "OLIVIA",
          "position": "Director Managing Executive Officer",
-         "pic": "department/directormanaginexecutiveofficer.jpg"
+         "pic": "department/member5.jpg"
       },
       {
-         "name": "Akio Nekoshima",
+         "name": "",
+         "position": "",
+         "pic": "department/member13.png"
+      },
+      {
+         "name": "MADELINE",
          "position": "Outside Director",
-         "pic": "department/OutsideDirector(Audit1).jpg"
+         "pic": "department/member6.jpg"
       },
       {
-         "name": "Hideo Tsujimura",
+         "name": "ADDISON",
          "position": "Outside Director",
-         "pic": "department/OutsideDirector(Audit2).jpg"
+         "pic": "department/member7.jpg"
       },
       {
-         "name": "Yoshiaki Tamura",
+         "name": "asdasdasdasd",
+         "position": "asdasdasdsad",
+         "pic": "department/member13.png"
+      },
+      {
+         "name": "",
+         "position": "",
+         "pic": "department/member13.png"
+      },
+      {
+         "name": "HAILEY",
          "position": "Outside Director",
-         "pic": "department/OutsideDirector(Audit3).jpg"
+         "pic": "department/member8.jpg"
       },
       {
-         "name": "Katsuyoshi Fukuma",
+         "name": "JACKSON",
          "position": "Supervisory Committee Member",
-         "pic": "department/OutsideDirector1.jpg"
+         "pic": "department/member11.jpg"
       },
       {
-         "name": "Jenifer Rogers",
+         "name": "NADIA",
          "position": "Supervisory Committee Member",
-         "pic": "department/OutsideDirector2.jpg"
+         "pic": "department/member12.jpg"
       },
       {
-         "name": "Atsuko Ishii",
+         "name": "LOGAN",
          "position": "Supervisory Committee Member",
-         "pic": "department/OutsideDirector3.jpg"
+         "pic": "department/member9.jpg"
       },
       {
-         "name": "Ryoichi Saito",
-         "position": "Supervisory Committee Member",
-         "pic": "department/Director(Audit2).jpg"
+         "name": "",
+         "position": "",
+         "pic": "department/member13.png"
+      },
+      {
+         "name": "LORA",
+         "position": "Supervisory Committee Membe",
+         "pic": "department/member10.jpg"
       }
    ]
 }
