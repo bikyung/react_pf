@@ -1,20 +1,22 @@
 import Layout from '../common/Layout';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Popup from '../common/Popup';
 
 function Youtube() {
+	const pop = useRef(null);
 	const key = 'AIzaSyBA0vVAYlhuCiLDSkDUi_LswCkyeB6NAoI';
-	const num = 8;
-	const id = 'PL92HST3Zi7rbsat9oT6ZUtyan4CUs8Tas';
+	const num = 9;
+	const id = 'PL92HST3Zi7rbOhNiZxBGcwmdmkYaEl72W';
 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${num}&playlistId=${id}`;
 
 	const [items, setItems] = useState([]);
-	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(0);
+	const [loading, setLoading] = useState(false);
 	useEffect(() => {
 		axios.get(url).then((json) => {
 			setItems(json.data.items);
+			setLoading(true);
 		});
 	}, []);
 
@@ -22,7 +24,7 @@ function Youtube() {
 		<>
 			<Layout name={'Youtube'} sub_visual={'youtube'}>
 				<div className='txt1'>
-					<h2>NINJA ZX-10RR</h2>
+					<h2>YOUTUBE STUDIO</h2>
 					<p>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
 						rem error autem voluptatum unde provident.
@@ -38,36 +40,42 @@ function Youtube() {
 							<article
 								key={idx}
 								onClick={() => {
-									setOpen(true);
 									setIndex(idx);
+									pop.current.open();
 								}}>
 								<div className='pic'>
 									<img src={item.snippet.thumbnails.medium.url} />
 								</div>
 								<div className='con'>
+									<span>{date.split('T')[0]}</span>
 									<h2>{item.snippet.title}</h2>
 									<p>
-										{desc.length > 100
-											? desc.substr(0, 100) + '...'
+										{desc.length > 300
+											? desc.substr(0, 300) + '...'
 											: desc}
 									</p>
-									<span>{date.split('T')[0]}</span>
 								</div>
 							</article>
 						);
 					})}
 				</div>
 			</Layout>
-			{open ? (
-				<Popup setOpen={setOpen}>
+			<Popup ref={pop}>
+				{loading && (
 					<iframe
 						src={
 							'https://www.youtube.com/embed/' +
 							items[index].snippet.resourceId.videoId
 						}
 						frameBorder='0'></iframe>
-				</Popup>
-			) : null}
+				)}
+				<span
+					onClick={() => {
+						pop.current.close();
+					}}>
+					Close
+				</span>
+			</Popup>
 		</>
 	);
 }

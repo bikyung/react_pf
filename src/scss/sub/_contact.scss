@@ -1,7 +1,172 @@
 .Contact {
-	#map {
-		width: 100%;
-		height: 400px;
-		background: #999;
+	width: 100%;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		.wrap {
+			display: flex;
+			.txt1 {
+				margin-right: 80px;
+				flex: 1 35%;
+				margin-bottom: 50px;
+				article {
+					margin-bottom: 30px;
+					border-bottom: 1px solid #e5e5e5;
+					padding-bottom: 20px;
+					h2 {
+						font: bold 24px/1 'Oswald';
+						margin-bottom: 15px;
+					}
+					p {
+						font: 18px/1.5 'pretendard';
+						margin-bottom: 15px;
+						color: #999;
+					}
+					&:last-child {
+						display: flex;
+						align-items: center;
+						border-bottom: none;
+						h2 {
+							margin-bottom: 0;
+						}
+						ul {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							margin-left: 20px;
+							li {
+								margin-right: 20px;
+								font-size: 30px;
+								cursor: pointer;
+								color: rgba(20, 88, 63, 0.8);
+							}
+						}
+					}
+				}
+			}
+			.txt2 {
+				flex: 1 65%;
+				h2 {
+					font: bold 30px/1 'Oswald';
+					padding-bottom: 10px;
+					border-bottom: 1px solid #e5e5e5;
+					margin-bottom: 50px;
+				}
+				table {
+					width: 100%;
+					caption {
+						position: absolute;
+						top: -9999px;
+						opacity: 0;
+					}
+					tbody {
+						tr {
+							width: 100%;
+							td {
+								width: 100%;
+								input {
+									display: inline-block;
+									margin-right: 20px;
+									padding: 10px 20px;
+									outline: none;
+									border: none;
+									background: #eee;
+									width: 31.4%;
+									color: #000;
+									&:nth-child(3) {
+										margin-right: 0;
+									}
+								}
+								textarea {
+									margin: 50px 0 40px;
+									width: 100%;
+									border: none;
+									background: #eee;
+									padding: 20px;
+								}
+								input[type='submit'] {
+									background: rgba(20, 88, 63, 0.8);
+									color: #fff;
+									cursor: pointer;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.map_wrap {
+			display: flex;
+			height: 500px;
+			margin-bottom: 50px;
+			.map_con {
+				flex: 1 25%;
+				.branch {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					li {
+						position: relative;
+						border-bottom: 1px solid #999;
+						padding: 30px 0 30px 80px;
+						cursor: pointer;
+						&:last-child {
+							border-bottom: none;
+						}
+						h2 {
+							font: bold 20px/1 'Oswald';
+							margin-bottom: 10px;
+						}
+						h3 {
+							font: 18px/1 'Oswald';
+							margin-bottom: 10px;
+						}
+						span {
+							font: 16px/1 'Oswald';
+						}
+						&:hover {
+							filter: grayscale(0) brightness(120%);
+							h2 {
+								color: rgba(20, 88, 63, 0.8);
+							}
+							h3 {
+								color: rgba(20, 88, 63, 0.8);
+							}
+							span {
+								color: rgba(20, 88, 63, 0.8);
+							}
+						}
+						&::after {
+							content: '';
+							position: absolute;
+							left: 20px;
+							top: 30%;
+							background: url(../../../public/img/marker2.png) no-repeat
+								center / contain;
+							display: block;
+							width: 40px;
+							height: 40px;
+						}
+					}
+				}
+				button {
+					margin-top: 26px;
+					padding: 19px;
+					width: 100%;
+					cursor: pointer;
+					font: bold 16px/1 'Oswald';
+					background: rgba(20, 88, 63, 0.8);
+					color: #fff;
+					border: none;
+					&:hover {
+						background: #000;
+					}
+				}
+			}
+			#map {
+				flex: 1 75%;
+				height: 100%;
+			}
+		}
 	}
 }

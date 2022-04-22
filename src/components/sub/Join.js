@@ -101,30 +101,76 @@ function Join() {
 
 		if (len === 0 && isSubmit) {
 			setSuccess(true);
-			//handleReset();
-			//err값이 의존성으로 등록되어 있는 useEffect안에
-			//다시 err 스테이트를 변경하는 함수나 구문이 있으면 무한루프에 빠지니 주의
 		} else {
 			setSuccess(false);
 		}
 	}, [err]);
 
-	//success 스테이트값을 의존성 배열로 해서
 	useEffect(() => {
-		//success값이 true로 변경되면
-		//기존 인풋요소 초기화
 		handleReset();
 	}, [success]);
 
 	return (
-		<Layout name={'Join'}>
-			{success ? <h2>회원가입을 축하합니다.</h2> : null}
+		<Layout name={'Join'} sub_visual={'submain'}>
+			<h2>MEMBERSHIP</h2>
+			<div className='txt'>
+				<p>We certainly recommend our special membership.</p>
+				<p>Whatever,you want the result, we will get it for you</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+					sapiente ratione eum excepturi, eveniet porro.
+				</p>
+			</div>
+			<div className='membership'>
+				<h2>Membership Terms and Conditions</h2>
+				<textarea name='terms' id='terms' cols='30' rows='10'>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Exercitationem nihil temporibus rem repudiandae tempora quam
+					voluptatem veritatis aperiam voluptatibus, illo id odit rerum ex
+					soluta autem alias numquam adipisci. Odio. Lorem ipsum dolor sit
+					amet consectetur adipisicing elit. Exercitationem nihil
+					temporibus rem repudiandae tempora quam voluptatem veritatis
+					aperiam voluptatibus, illo id odit rerum ex soluta autem alias
+					numquam adipisci. Odio. Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Exercitationem nihil temporibus rem repudiandae
+					tempora quam voluptatem veritatis aperiam voluptatibus, illo id
+					odit rerum ex soluta autem alias numquam adipisci. Odio. Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+					nihil temporibus rem repudiandae tempora quam voluptatem
+					veritatis aperiam voluptatibus, illo id odit rerum ex soluta
+					autem alias numquam adipisci. Odio. Lorem ipsum dolor sit amet
+					consectetur adipisicing elit. Exercitationem nihil temporibus rem
+					repudiandae tempora quam voluptatem veritatis aperiam
+					voluptatibus, illo id odit rerum ex soluta autem alias numquam
+					adipisci. Odio. Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Exercitationem nihil temporibus rem repudiandae
+					tempora quam voluptatem veritatis aperiam voluptatibus, illo id
+					odit rerum ex soluta autem alias numquam adipisci. Odio. Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+					nihil temporibus rem repudiandae tempora quam voluptatem
+					veritatis aperiam voluptatibus, illo id odit rerum ex soluta
+					autem alias numquam adipisci. Odio. Lorem ipsum dolor sit amet
+					consectetur adipisicing elit. Exercitationem nihil temporibus rem
+					repudiandae tempora quam voluptatem veritatis aperiam
+					voluptatibus, illo id odit rerum ex soluta autem alias numquam
+					adipisci. Odio. Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Exercitationem nihil temporibus rem repudiandae
+					tempora quam voluptatem veritatis aperiam voluptatibus, illo id
+					odit rerum ex soluta autem alias numquam adipisci. Odio. Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+					nihil temporibus rem repudiandae tempora quam voluptatem
+					veritatis aperiam voluptatibus, illo id odit rerum ex soluta
+					autem alias numquam adipisci. Odio.
+				</textarea>
+			</div>
+
 			<form onSubmit={handleSubmit}>
+				<h2>Membership registration form</h2>
 				<fieldset>
-					<legend>회원가입 폼 양식</legend>
+					<legend className='hidden'>회원가입 폼 양식</legend>
 
 					<table border='1'>
-						<caption>회원가입 정보입력</caption>
+						<caption className='hidden'>회원가입 정보입력</caption>
 						<tbody>
 							{/* userid */}
 							<tr>
@@ -274,14 +320,15 @@ function Join() {
 										id='comments'
 										cols='30'
 										rows='10'
-										value={val.comments}
-										onChange={handleChange}></textarea>
+										onChange={handleChange}
+										placeholder='Comment'></textarea>
 									<span className='err'>{err.comments}</span>
 								</td>
 							</tr>
 							{/* btnSet */}
 							<tr>
-								<th colSpan='2'>
+								<th></th>
+								<td colSpan='2'>
 									<input
 										type='reset'
 										value='CANCEL'
@@ -294,12 +341,13 @@ function Join() {
 											setIsSubmit(true);
 										}}
 									/>
-								</th>
+								</td>
 							</tr>
 						</tbody>
 					</table>
 				</fieldset>
 			</form>
+			{success ? <h2>Congratulations on becoming a member.</h2> : null}
 		</Layout>
 	);
 }

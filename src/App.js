@@ -4,25 +4,22 @@ import './scss/style.scss';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
-import Visual from './components/main/Visual';
-import Content from './components/main/Content';
+import Main from './components/main/Main';
 
-import Motorcycle from './components/sub/Motorcycle';
 import Department from './components/sub/Department';
 import Youtube from './components/sub/Youtube';
 import Gallery from './components/sub/Gallery';
 import News from './components/sub/News';
 import Contact from './components/sub/Contact';
 import Join from './components/sub/Join';
+import Masonry from './components/sub/Masonry';
 
 function App() {
 	return (
 		<>
 			<Switch>
 				<Route exact path='/'>
-					<Header type={'main'} />
-					<Visual />
-					<Content />
+					<Main />
 				</Route>
 
 				<Route path='/'>
@@ -30,9 +27,9 @@ function App() {
 				</Route>
 			</Switch>
 
-			<Route path='/motorcycle' component={Motorcycle} />
 			<Route path='/department' component={Department} />
 			<Route path='/gallery' component={Gallery} />
+			<Route path='/masonry' component={Masonry} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/news' component={News} />
 			<Route path='/contact' component={Contact} />

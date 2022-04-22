@@ -1,16 +1,103 @@
 .News {
-	background: #fff;
-	.inputBox {
-		border: 1px solid #aaa;
-		padding: 50px;
-		margin-bottom: 100px;
-	}
-	.showBox {
-		border: 1px solid #aaa;
-		padding: 50px;
+	.inner {
+		.con {
+			margin-bottom: 100px;
+			display: flex;
+			gap: 10px;
+			article {
+				border: 1px solid #000;
+				background: rgba(20, 88, 63, 0.8);
 
-		> article {
-			border: 1px solid #ccc;
+				h2 {
+					font: bold 24px/1 'Oswald';
+					margin-bottom: 20px;
+					text-align: center;
+					padding: 10px;
+					color: #fff;
+				}
+				p {
+					font: 16px/1 'pretendard';
+					color: #bbb;
+					text-align: center;
+					margin-bottom: 20px;
+					padding: 0 10px;
+				}
+			}
+		}
+		.wrap {
+			display: flex;
+			width: 100%;
+			.inputBox {
+				flex: 1 40%;
+				justify-content: space-between;
+				padding: 20px;
+				margin-right: 3%;
+				position: relative;
+				background: rgba(20, 88, 63, 0.8);
+				h2 {
+					font: bold 24px/1 'Oswald';
+					margin-bottom: 30px;
+					color: #fff;
+				}
+				input {
+					width: 100%;
+					margin-bottom: 30px;
+					background: #e5e5e5;
+					border: none;
+					padding: 15px;
+				}
+				textarea {
+					width: 100%;
+					background: #e5e5e5;
+					padding: 15px;
+					margin-bottom: 30px;
+				}
+				.newsBtns {
+					display: flex;
+					width: 100%;
+					gap: 20px;
+					button {
+						width: 48%;
+						padding: 15px 0;
+						cursor: pointer;
+						font: 14px/1 'Oswald';
+					}
+				}
+			}
+			.showBox {
+				flex: 1 60%;
+				background: rgba(20, 88, 63, 0.8);
+				padding: 20px;
+				article {
+					width: 100%;
+					margin-bottom: 10px;
+					background: #e5e5e5;
+					padding: 20px;
+					position: relative;
+					h2 {
+						font: bold 18px/1 'pretendard';
+						margin-bottom: 5px;
+					}
+					p {
+						font: 16px/1 'pretendard';
+					}
+					.btn {
+						position: absolute;
+						right: 10px;
+						top: 30%;
+						button {
+							padding: 10px 20px;
+							margin-left: 10px;
+							cursor: pointer;
+							font: 14px/1 'Oswald';
+							&:hover {
+								background: rgba(20, 88, 63, 0.8);
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

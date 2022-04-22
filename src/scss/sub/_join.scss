@@ -1,3 +1,139 @@
-form {
-	background: #fff;
+.Join {
+	.inner {
+		> h2 {
+			text-align: center;
+			color: rgba(20, 88, 63, 0.8);
+			font: bold 30px/1 'Oswald';
+			margin-bottom: 50px;
+		}
+		.txt {
+			p {
+				font: 18px/1 'pretendard';
+				color: #555;
+				margin-bottom: 10px;
+				&:nth-child(2) {
+					font: bold 20px/1 'Oswald';
+				}
+			}
+		}
+		.membership {
+			margin-top: 30px;
+			position: relative;
+			&::before {
+				content: '';
+				width: 15px;
+				height: 15px;
+				background: rgba(20, 88, 63, 0.8);
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 7px;
+			}
+			h2 {
+				font: 24px/1 'Oswald';
+				color: rgba(20, 88, 63, 0.8);
+				margin-bottom: 30px;
+				margin-left: 20px;
+			}
+			textarea {
+				width: 100%;
+				resize: none;
+				padding: 20px;
+				font: 16px/1.2 'pretendard';
+				margin-bottom: 50px;
+			}
+		}
+		form {
+			position: relative;
+			&::before {
+				content: '';
+				width: 15px;
+				height: 15px;
+				background: rgba(20, 88, 63, 0.8);
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 7px;
+			}
+
+			h2 {
+				font: 24px/1 'Oswald';
+				color: rgba(20, 88, 63, 0.8);
+				margin-bottom: 30px;
+				margin-left: 20px;
+			}
+			fieldset {
+				border: none;
+				border-top: 3px solid #000;
+				table {
+					margin-top: 20px;
+					width: 100%;
+					border: none;
+					tbody {
+						tr {
+							th {
+								width: 40%;
+								border: none;
+								padding: 20px;
+							}
+							td {
+								width: 60%;
+								border: none;
+								#userid,
+								#email,
+								#pwd1,
+								#pwd2 {
+									border: none;
+									border-bottom: 2px solid #999;
+									padding-bottom: 10px;
+									width: 70%;
+								}
+								#edu {
+									border: none;
+								}
+								#male,
+								#female {
+									margin: 10px;
+								}
+								#sports,
+								#game,
+								#music {
+									margin: 10px;
+								}
+								textarea {
+									width: 70%;
+									padding: 10px;
+									border: none;
+									border-top: 2px solid #999;
+									border-bottom: 1px solid #999;
+									margin-bottom: 20px;
+								}
+								input[type='reset'],
+								input[type='submit'] {
+									width: 150px;
+									padding: 10px;
+									background: rgba(20, 88, 63, 0.8);
+									color: #fff;
+									font: 16px/1.2 'pretendard';
+								}
+								input[type='submit'] {
+									margin-left: 50px;
+								}
+								span {
+									display: block;
+									color: red;
+									margin: 5px 0;
+									font: 14px/1 'pretendard';
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		> h2 {
+			text-align: center;
+			margin-top: 30px;
+		}
+	}
 }

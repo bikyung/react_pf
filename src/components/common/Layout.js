@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 function Layout(props) {
 	const path = process.env.PUBLIC_URL;
 	let frame = useRef(null);
+	console.log(props.txt);
 
 	useEffect(() => {
 		console.log('Layout 컴포넌트 생성');
@@ -16,7 +17,17 @@ function Layout(props) {
 	return (
 		<section className={`content ${props.name}`} ref={frame}>
 			<figure>
-				<img src={`${path}/img/${props.name}/${props.sub_visual}.jpg`} />
+				<div className='sub_visual'>
+					<img src={`${path}/img/bg.png`} alt='bg' />
+				</div>
+				<div className='info'>
+					<div className='infoTxt'>
+						<span>HOME</span>
+						<span>{props.name}</span>
+						<h2>Our</h2>
+						<h3>{props.name}</h3>
+					</div>
+				</div>
 			</figure>
 
 			<div className='inner'>{props.children}</div>
