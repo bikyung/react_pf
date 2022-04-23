@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function Join() {
 	const initVal = {
@@ -16,7 +16,7 @@ function Join() {
 	const [err, setErr] = useState({});
 	const [success, setSuccess] = useState(false);
 	const [isSubmit, setIsSubmit] = useState(false);
-
+	const textarea = useRef(null);
 	const check = (val) => {
 		const errs = {};
 		const eng = /[a-zA-Z]/;
@@ -111,7 +111,7 @@ function Join() {
 	}, [success]);
 
 	return (
-		<Layout name={'Join'} sub_visual={'submain'}>
+		<Layout name={'Join'}>
 			<h2>MEMBERSHIP</h2>
 			<div className='txt'>
 				<p>We certainly recommend our special membership.</p>
@@ -123,7 +123,12 @@ function Join() {
 			</div>
 			<div className='membership'>
 				<h2>Membership Terms and Conditions</h2>
-				<textarea name='terms' id='terms' cols='30' rows='10'>
+				<textarea
+					name='terms'
+					id='terms'
+					cols='30'
+					rows='10'
+					ref={textarea}>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Exercitationem nihil temporibus rem repudiandae tempora quam
 					voluptatem veritatis aperiam voluptatibus, illo id odit rerum ex

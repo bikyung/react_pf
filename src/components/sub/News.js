@@ -76,7 +76,6 @@ function News() {
 	};
 
 	useEffect(() => {
-		console.log('posts state변경됨');
 		localStorage.setItem('posts', JSON.stringify(posts));
 	}, [posts]);
 
@@ -116,7 +115,7 @@ function News() {
 						cols='30'
 						rows='10'
 						placeholder='본문을 입력하세요.'
-						ref={textarea}></textarea>
+						ref={editTextarea}></textarea>
 					<br />
 					<div className='newsBtns'>
 						<button onClick={resetPost}>CANCEL</button>

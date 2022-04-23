@@ -16,7 +16,7 @@ function Contact() {
 			latlng: new kakao.maps.LatLng(37.512714519901536, 127.06064893707484),
 			imgSrc: `${path}/img/marker.gif`,
 			imgSize: new kakao.maps.Size(90, 70),
-			imgPos: { offset: new kakao.maps.Point(110, 90) },
+			imgPos: { offset: new kakao.maps.Point(50, 50) },
 			name: 'Lorem ipsum dolor',
 			phone: '02-1588-1234',
 		},
@@ -25,16 +25,16 @@ function Contact() {
 			latlng: new kakao.maps.LatLng(37.57599374423426, 126.97686384130986),
 			imgSrc: `${path}/img/marker.gif`,
 			imgSize: new kakao.maps.Size(90, 70),
-			imgPos: { offset: new kakao.maps.Point(110, 90) },
+			imgPos: { offset: new kakao.maps.Point(50, 50) },
 			name: 'Alea iacta est',
 			phone: '1588-1234',
 		},
 		{
 			title: 'INCHEON',
-			latlng: new kakao.maps.LatLng(37.55163472770302, 126.98815135296329),
+			latlng: new kakao.maps.LatLng(37.55163472770302, 126.93815135296329),
 			imgSrc: `${path}/img/marker.gif`,
 			imgSize: new kakao.maps.Size(90, 70),
-			imgPos: { offset: new kakao.maps.Point(110, 90) },
+			imgPos: { offset: new kakao.maps.Point(50, 50) },
 			name: 'Xitus acta probat regulam',
 			phone: '032-1588-1234',
 		},
@@ -188,7 +188,6 @@ function Contact() {
 				<div className='map_con'>
 					<ul className='branch' ref={branch}>
 						{mapInfo.map((info, idx) => {
-							console.log(map);
 							return (
 								<li key={idx} onClick={() => setIndex(idx)}>
 									<h2>{info.title}</h2>
