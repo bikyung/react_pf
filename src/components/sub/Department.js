@@ -9,13 +9,12 @@ function Department(props) {
 
 	useEffect(() => {
 		axios.get(`${path}/DB/Department.json`).then((json) => {
-			console.log(json);
 			setMembers(json.data.data);
 		});
 	}, []);
 
 	return (
-		<Layout name={'Department'} sub_visual={'main'}>
+		<Layout name={'Department'}>
 			<h2>Business Structure</h2>
 			<div className='wrap'>
 				<div className='txtBox'>

@@ -115,7 +115,7 @@ function News() {
 						cols='30'
 						rows='10'
 						placeholder='본문을 입력하세요.'
-						ref={editTextarea}></textarea>
+						ref={textarea}></textarea>
 					<br />
 					<div className='newsBtns'>
 						<button onClick={resetPost}>CANCEL</button>

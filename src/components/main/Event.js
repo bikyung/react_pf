@@ -25,7 +25,7 @@ function Event() {
 	}, []);
 
 	return (
-		<main id='Event' className='myScroll'>
+		<section id='Event' className='myScroll'>
 			<h1>Event</h1>
 
 			<ul>
@@ -40,7 +40,7 @@ function Event() {
 					}
 				})}
 			</ul>
-		</main>
+		</section>
 	);
 }
 

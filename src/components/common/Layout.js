@@ -25,7 +25,6 @@ function Layout(props) {
 					</div>
 				</div>
 			</figure>
-
 			<div className='inner'>{props.children}</div>
 		</section>
 	);

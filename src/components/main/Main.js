@@ -1,10 +1,13 @@
+import Header from '../common/Header';
 import Visual from './Visual';
+import Photo from './Photo';
 import Event from './Event';
 import Vids from './Vids';
 import Pics from './Pics';
-import Header from '../common/Header';
+import TextContent from './TextContent';
 import Anime from '../../class/anim';
 import Btns from './Btns';
+
 import { useEffect, useRef, useState } from 'react';
 
 const path = process.env.PUBLIC_URL;
@@ -54,9 +57,11 @@ function Main() {
 		<main ref={main}>
 			<Header type={'main'} logoSrc={`${path}/img/logo.png`} />
 			<Visual />
-			<Event />
+			<Photo />
 			<Vids />
+			<TextContent />
 			<Pics />
+			<Event />
 			<Btns setIndex={setIndex} />
 		</main>
 	);

@@ -22,7 +22,7 @@ function Youtube() {
 
 	return (
 		<>
-			<Layout name={'Youtube'} sub_visual={'youtube'}>
+			<Layout name={'Youtube'}>
 				<div className='txt1'>
 					<h2>YOUTUBE STUDIO</h2>
 					<p>

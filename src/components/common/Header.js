@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const path = process.env.PUBLIC_URL;
 
 function Header(props) {
-	const active = { color: '#999' };
-
+	const active = { color: 'rgba(20, 88, 63, 0.8)' };
 	return (
-		<header id='header' className={props.type}>
+		<header id='header' className='myScroll'>
 			<div className='inner'>
 				<h1>
 					<NavLink exact to='/'>
@@ -49,6 +50,7 @@ function Header(props) {
 						</li>
 					</ul>
 				</nav>
+				<FontAwesomeIcon icon={faBars} />
 			</div>
 		</header>
 	);

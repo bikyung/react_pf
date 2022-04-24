@@ -18,6 +18,7 @@ function Gallery() {
 	const [loading, setLoading] = useState(true);
 	const [enableClick, setEnableClick] = useState(true);
 	const [items, setItems] = useState([]);
+
 	const frame = useRef(null);
 	const input = useRef(null);
 	const pop = useRef(null);
@@ -106,7 +107,6 @@ function Gallery() {
 				<div className='search'>
 					<ul className='searchMenu'>
 						<li>
-							{' '}
 							<button
 								onClick={() => {
 									if (enableClick) {
@@ -123,7 +123,6 @@ function Gallery() {
 							</button>
 						</li>
 						<li>
-							{' '}
 							<button
 								onClick={() => {
 									if (enableClick) {
@@ -140,7 +139,6 @@ function Gallery() {
 							</button>
 						</li>
 						<li>
-							{' '}
 							<button
 								onClick={() => {
 									if (enableClick) {

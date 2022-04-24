@@ -17,11 +17,12 @@ $mobile: 539px;
 @import 'common/popup';
 
 @import 'main/visual';
-@import 'main/content';
 @import 'main/btns';
 @import 'main/pics';
 @import 'main/vids';
 @import 'main/event';
+@import 'main/Photo';
+@import 'main/textContent';
 
 @import 'sub/gallery';
 @import 'sub/youtube';
@@ -29,4 +30,3 @@ $mobile: 539px;
 @import 'sub/news';
 @import 'sub/contact';
 @import 'sub/join';
-@import 'sub/masonry';
