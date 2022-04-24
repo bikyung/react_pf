@@ -1,19 +1,79 @@
 footer {
 	width: 100%;
-	border-top: 1px solid #bbb;
-	padding: 100px 0px;
+	background: #333;
+	padding: 50px 0;
 
 	.inner {
 		width: 1180px;
 		margin: 0px auto;
 		position: relative;
-
-		p {
-			text-align: center;
-			font: 12px/1 'arial';
-			color: #999;
-			letter-spacing: 2px;
-			text-align: center;
+		.wrap {
+			width: 100%;
+			display: flex;
+			margin-bottom: 50px;
+			.footer_logo {
+				flex: 1 30%;
+				h1 {
+					max-width: 80px;
+					img {
+						width: 100%;
+					}
+				}
+				> ul {
+					display: flex;
+					li {
+						border: 1px solid #777;
+						border-radius: 50%;
+						width: 50px;
+						height: 50px;
+						font-size: 30px;
+						margin-right: 10px;
+						text-align: center;
+						line-height: 48px;
+						cursor: pointer;
+						&.on {
+							background: rgba(20, 88, 63, 0.8);
+							border: none;
+						}
+					}
+				}
+			}
+			.footer_txt {
+				flex: 1 70%;
+				display: flex;
+				.txt1 {
+					margin-right: 50px;
+					h3 {
+						font: bold 18px/1.3 'pretendard';
+						margin-bottom: 5px;
+						color: #fff;
+					}
+					li {
+						margin-bottom: 10px;
+						font: 14px/1.3 'pretendard';
+						color: #999;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		.policy {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 15px;
+			border-top: 1px solid #000;
+			h2 {
+				font: 13px/1.3 'pretendard';
+				color: #666;
+			}
+			ul {
+				display: flex;
+				li {
+					margin-left: 30px;
+					font: 12px/1.3 'pretendard';
+					color: #666;
+				}
+			}
 		}
 	}
 }

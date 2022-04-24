@@ -6,6 +6,7 @@ function Photo() {
 		<>
 			<section id='Photo' className='myScroll'>
 				<div className='inner'>
+					<h2>Schedule Content</h2>
 					<div className='wrap'>
 						<div className='photo'>
 							<img src={`${path}/img/section1.jpg`} />
@@ -48,7 +49,6 @@ function Photo() {
 					</div>
 				</div>
 			</section>
-			;
 		</>
 	);
 }

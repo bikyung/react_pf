@@ -23,23 +23,31 @@ function Event() {
 	useEffect(() => {
 		localStorage.setItem('posts', JSON.stringify(posts));
 	}, []);
+	console.log(posts);
 
 	return (
 		<section id='Event' className='myScroll'>
-			<h1>Event</h1>
-
-			<ul>
-				{posts.map((post, idx) => {
-					if (idx < 4) {
-						return (
-							<li key={idx}>
-								<h2>{post.title}</h2>
-								<p>{post.content}</p>
-							</li>
-						);
-					}
-				})}
-			</ul>
+			<div className='inner'>
+				<h2>NEWS & Preview</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+					dolorem tempore. Ducimus, at.
+				</p>
+				<div className='wrap'>
+					<ul>
+						{posts.map((post, idx) => {
+							if (idx < 6) {
+								return (
+									<li key={idx}>
+										<h2>{post.title}</h2>
+										<p>{post.content}</p>
+									</li>
+								);
+							}
+						})}
+					</ul>
+				</div>
+			</div>
 		</section>
 	);
 }

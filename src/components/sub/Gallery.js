@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
 import Masonry from 'react-masonry-component';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +13,15 @@ function Gallery() {
 	const masonryOptions = {
 		transitionDuration: '0.5s',
 	};
+
+	const { flickr } = useSelector((state) => state.flickrReducer);
+	const dispatch = useDispatch();
+
+	const [opt, setOpt] = useState({ type: 'interest' });
+
+	useEffect(() => {
+		dispatch({ type: 'FLICKR_START', opt });
+	}, [opt]);
 
 	const [index, setIndex] = useState(0);
 	const [load, setload] = useState(false);

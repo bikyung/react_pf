@@ -1,17 +1,9 @@
 import Layout from '../common/Layout';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 function Department(props) {
 	const path = process.env.PUBLIC_URL;
-	const [members, setMembers] = useState([]);
-
-	useEffect(() => {
-		axios.get(`${path}/DB/Department.json`).then((json) => {
-			setMembers(json.data.data);
-		});
-	}, []);
+	const members = useSelector((state) => state.memberReducer.members);
 
 	return (
 		<Layout name={'Department'}>

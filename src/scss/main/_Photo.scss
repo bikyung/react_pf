@@ -3,6 +3,11 @@
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
+		> h2 {
+			color: rgba(20, 88, 63, 0.8);
+			font: bold 40px/1 'Oswald';
+			margin-bottom: 30px;
+		}
 		.wrap {
 			display: flex;
 			.photo {
