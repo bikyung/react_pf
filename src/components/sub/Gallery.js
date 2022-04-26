@@ -23,19 +23,21 @@ function Gallery() {
 	}, [opt]);
 
 	const searchTag = () => {
-		const tag = input.current.value;
+		const tag = input.current.value.trim();
 		setOpt({ type: 'search', tags: tag });
 	};
 
 	const [index, setIndex] = useState(0);
-	const [load, setload] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [enableClick, setEnableClick] = useState(true);
-	const [items, setItems] = useState([]);
 
 	const frame = useRef(null);
 	const input = useRef(null);
 	const pop = useRef(null);
+
+	useEffect(() => {
+		frame.current.classList.add('on');
+	}, []);
 
 	return (
 		<>
@@ -127,9 +129,9 @@ function Gallery() {
 			</Layout>
 
 			<Popup ref={pop}>
-				{load && (
+				{flickr.length !== 0 && (
 					<img
-						src={`https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`}
+						src={`https://live.staticflickr.com/${flickr[index].server}/${flickr[index].id}_${flickr[index].secret}_b.jpg`}
 					/>
 				)}
 				<span onClick={() => pop.current.close()}>Close</span>

@@ -25,11 +25,10 @@
 
 		article {
 			width: 100%;
-			height: 30%;
 			border-top: 2px solid #000;
 			display: flex;
 			justify-content: space-between;
-			padding: 30px 10px;
+			padding: 20px 10px;
 			margin-bottom: 50px;
 			position: relative;
 			transition: 0.7s;
@@ -39,9 +38,10 @@
 				filter: grayscale(0) brightness(120%);
 			}
 			.pic {
-				width: 40%;
+				flex: 1 40%;
 				height: 100%;
-
+				margin-right: 50px;
+				position: relative;
 				img {
 					width: 100%;
 					height: 100%;
@@ -52,10 +52,20 @@
 						display: block;
 					}
 				}
+				.fa-circle-play {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					font-size: 50px;
+					color: rgba(20, 88, 63, 0.8);
+					opacity: 1;
+					transition: 0.7s;
+				}
 			}
 
 			.con {
-				width: 54%;
+				flex: 1 60%;
 				height: 100%;
 				position: relative;
 

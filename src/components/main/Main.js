@@ -60,7 +60,7 @@ function Main() {
 			<main ref={main}>
 				<Header type={'main'} logoSrc={`${path}/img/logo.png`} />
 				<Visual />
-				<Photo scrolled={setScrolled} posStart={pos.current[1]} />
+				<Photo scrolled={scrolled} posStart={pos.current[1]} />
 				<Vids scrolled={scrolled} posStart={pos.current[2]} />
 				<TextContent scrolled={scrolled} posStart={pos.current[3]} />
 				<Pics scrolled={scrolled} posStart={pos.current[4]} />

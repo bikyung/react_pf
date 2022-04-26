@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 function Youtube() {
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
@@ -40,6 +42,7 @@ function Youtube() {
 								}}>
 								<div className='pic'>
 									<img src={item.snippet.thumbnails.medium.url} />
+									<FontAwesomeIcon icon={faCirclePlay} />
 								</div>
 								<div className='con'>
 									<span>{date.split('T')[0]}</span>

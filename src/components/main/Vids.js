@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import Popup from '../common/Popup';
 import { useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 function Vids() {
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
@@ -32,6 +34,7 @@ function Vids() {
 													: description}
 											</p>
 											<span>{date.split('T')[0]}</span>
+											<FontAwesomeIcon icon={faCirclePlay} />
 										</li>
 									);
 							})}
