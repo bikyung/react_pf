@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
@@ -14,14 +13,24 @@ function Gallery() {
 		transitionDuration: '0.5s',
 	};
 
-	const { flickr } = useSelector((state) => state.flickrReducer);
+	const { flickr, err } = useSelector((state) => state.flickrReducer);
 	const dispatch = useDispatch();
+	console.log(err);
 
 	const [opt, setOpt] = useState({ type: 'interest' });
 
 	useEffect(() => {
 		dispatch({ type: 'FLICKR_START', opt });
 	}, [opt]);
+
+	const initGallery = () => {
+		setOpt({ type: 'interest' });
+	};
+
+	const searchTag = () => {
+		const tag = input.current.value;
+		setOpt({ type: 'search', tags: tag });
+	};
 
 	const [index, setIndex] = useState(0);
 	const [load, setload] = useState(false);
@@ -33,83 +42,11 @@ function Gallery() {
 	const input = useRef(null);
 	const pop = useRef(null);
 
-	const getFlickr = async (opt) => {
-		const base = 'https://www.flickr.com/services/rest/?';
-		const key = '86007043f7007d67ce5b5f460ff91ac7';
-		const method1 = 'flickr.interestingness.getList';
-		const method2 = 'flickr.photos.search';
-		const method3 = 'flickr.favorites.getList';
-		const method4 = 'flickr.galleries.getPhotos';
-		const username = '195311166@N04';
-		const galleryId = '72157720599016444';
-		const num = opt.count;
-		let url = '';
-
-		if (opt.type === 'interest') {
-			url = `${base}method=${method1}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
-		}
-
-		if (opt.type === 'search') {
-			url = `${base}method=${method2}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
-		}
-
-		if (opt.type === 'album') {
-			url = `${base}method=${method3}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${username}&tags=${opt.tags}`;
-		}
-		if (opt.type === 'favorite') {
-			url = `${base}method=${method4}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${username}&tags=${opt.tags}&gallery_id=${galleryId}`;
-		}
-
-		await axios.get(url).then((json) => {
-			if (json.data.photos.photo.length === 0) {
-				alert('해당 검색어의 이미지가 없습니다');
-				return;
-			}
-			setItems(json.data.photos.photo);
-			setload(true);
-		});
-
-		setTimeout(() => {
-			frame.current.classList.add('on');
-			setLoading(false);
-
-			setTimeout(() => {
-				setEnableClick(true);
-			}, 1000);
-		}, 1000);
-	};
-
-	const showSearch = () => {
-		const result = input.current.value.trim();
-		if (!result || result === '') {
-			alert('검색어를 입력하세요.');
-			return;
-		}
-
-		if (enableClick) {
-			setEnableClick(false);
-			setLoading(true);
-			frame.current.classList.remove('on');
-
-			getFlickr({
-				type: 'search',
-				count: 1000,
-				tags: result,
-			});
-			input.current.value = '';
-		}
-	};
-
-	useEffect(() => {
-		getFlickr({
-			type: 'interest',
-			count: 50,
-		});
-	}, []);
-
 	return (
 		<>
 			<Layout name={'Gallery'}>
+				<button onClick={initGallery}>갤러리 초기화</button>
+
 				{loading ? (
 					<img className='loading' src={path + '/img/loading.gif'} />
 				) : null}
@@ -123,10 +60,6 @@ function Gallery() {
 										setEnableClick(false);
 										setLoading(true);
 										frame.current.classList.remove('on');
-										getFlickr({
-											type: 'album',
-											count: 100,
-										});
 									}
 								}}>
 								ALBUM
@@ -139,10 +72,6 @@ function Gallery() {
 										setEnableClick(false);
 										setLoading(true);
 										frame.current.classList.remove('on');
-										getFlickr({
-											type: 'interest',
-											count: 100,
-										});
 									}
 								}}>
 								INTEREST
@@ -155,10 +84,6 @@ function Gallery() {
 										setEnableClick(false);
 										setLoading(true);
 										frame.current.classList.remove('on');
-										getFlickr({
-											type: 'favorite',
-											count: 100,
-										});
 									}
 								}}>
 								FAVORITE
@@ -171,10 +96,10 @@ function Gallery() {
 							type='text'
 							ref={input}
 							onKeyUp={(e) => {
-								if (e.key === 'Enter') showSearch();
+								if (e.key === 'Enter');
 							}}
 						/>
-						<button onClick={showSearch}>
+						<button onClick={searchTag}>
 							<FontAwesomeIcon icon={faMagnifyingGlass} />
 						</button>
 					</div>
@@ -182,7 +107,7 @@ function Gallery() {
 
 				<div className='frame' ref={frame}>
 					<Masonry elementType={'div'} options={masonryOptions}>
-						{items.map((item, idx) => {
+						{flickr.map((item, idx) => {
 							return (
 								<article
 									key={idx}

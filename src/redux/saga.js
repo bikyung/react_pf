@@ -1,15 +1,49 @@
 import { takeLatest, all, put, fork, call } from 'redux-saga/effects';
-import { getFlickr } from './api';
+import { getFlickr, getYoutube, getMember } from './api';
 
 export default function* rootSaga() {
-	yield all([fork(callFlickr)]);
+	yield all([fork(callFlickr), fork(callYoutube), fork(callMember)]);
 }
 
-export function* callFlickr(action) {
+export function* callFlickr() {
 	yield takeLatest('FLICKR_START', returnFlickr);
 }
 
 export function* returnFlickr(action) {
-	const response = yield call(getFlickr, action.opt);
-	yield put();
+	try {
+		const response = yield call(getFlickr, action.opt);
+		yield put({
+			type: 'FLICKR_SUCCESS',
+			payload: response.data.photos.photo,
+		});
+	} catch (err) {
+		yield put({ type: 'FLICKR_ERROR', payload: err });
+	}
+	console.log(getFlickr);
+}
+
+export function* callYoutube() {
+	yield takeLatest('YOUTUBE_START', returnYoutube);
+}
+
+export function* returnYoutube() {
+	try {
+		const response = yield call(getYoutube);
+		yield put({ type: 'YOUTUBE_SUCCESS', payload: response.data.items });
+	} catch (err) {
+		yield put({ tpye: 'YOUTUBE_ERROR', payload: err });
+	}
+}
+
+export function* callMember() {
+	yield takeLatest('MEMBER_START', returnMember);
+}
+
+export function* returnMember() {
+	try {
+		const response = yield call(getMember);
+		yield put({ type: 'MEMBER_SUCCESS', payload: response.data.data });
+	} catch (err) {
+		yield put({ tpye: 'MEMBER_ERROR', payload: err });
+	}
 }

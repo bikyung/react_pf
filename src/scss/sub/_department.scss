@@ -126,6 +126,7 @@
 				cursor: pointer;
 				margin-bottom: 10px;
 				position: relative;
+				overflow: hidden;
 				&:nth-child(10) {
 					margin-right: 15px;
 					grid-column: 2 / span 2;

@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 import { useSelector } from 'react-redux';
 
-function Department(props) {
+function Department() {
 	const path = process.env.PUBLIC_URL;
 	const members = useSelector((state) => state.memberReducer.members);
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+const path = process.env.PUBLIC_URL;
 
 export const getFlickr = async (opt) => {
 	const base = 'https://www.flickr.com/services/rest/?';
@@ -27,5 +28,19 @@ export const getFlickr = async (opt) => {
 		url = `${base}method=${method4}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${username}&tags=${opt.tags}&gallery_id=${galleryId}`;
 	}
 
+	return await axios.get(url);
+};
+
+export const getYoutube = async () => {
+	const key = 'AIzaSyBA0vVAYlhuCiLDSkDUi_LswCkyeB6NAoI';
+	const num = 9;
+	const id = 'PL92HST3Zi7rbOhNiZxBGcwmdmkYaEl72W';
+	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${num}&playlistId=${id}`;
+
+	return await axios.get(url);
+};
+
+export const getMember = async () => {
+	const url = path + '/DB/department.json';
 	return await axios.get(url);
 };

@@ -24,7 +24,7 @@ function Main() {
 	};
 
 	const activation = () => {
-		const base = -200;
+		const base = -100;
 		let scroll = window.scrollY;
 		const btns = main.current.querySelectorAll('.btns li');
 
@@ -54,16 +54,18 @@ function Main() {
 		});
 	}, [index]);
 	return (
-		<main ref={main}>
-			<Header type={'main'} logoSrc={`${path}/img/logo.png`} />
-			<Visual />
-			<Photo />
-			<Vids />
-			<TextContent />
-			<Pics />
-			<Event />
-			<Btns setIndex={setIndex} />
-		</main>
+		<>
+			<main ref={main}>
+				<Header type={'main'} logoSrc={`${path}/img/logo.png`} />
+				<Visual />
+				<Photo />
+				<Vids />
+				<TextContent />
+				<Pics />
+				<Event />
+				<Btns setIndex={setIndex} />
+			</main>
+		</>
 	);
 }
 
