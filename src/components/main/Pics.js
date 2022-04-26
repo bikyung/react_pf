@@ -21,7 +21,7 @@ function Pics() {
 						recusandae corrupti dolores eligendi vitae!
 					</p>
 					<div className='pics_con'>
-						<img src='' alt='' />
+						<img src={`${path}/img/pic.jpg`} />
 					</div>
 					<p>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit.
