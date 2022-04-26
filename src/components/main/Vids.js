@@ -17,7 +17,7 @@ function Vids() {
 							{vidData.map((vid, idx) => {
 								const description = vid.snippet.description;
 								const date = vid.snippet.publishedAt;
-								if (idx < 4)
+								if (idx < 6)
 									return (
 										<li
 											key={idx}
@@ -27,8 +27,8 @@ function Vids() {
 											}}>
 											<img src={vid.snippet.thumbnails.high.url} />
 											<p>
-												{description.length > 150
-													? description.substr(0, 150) + '...'
+												{description.length > 90
+													? description.substr(0, 90) + '...'
 													: description}
 											</p>
 											<span>{date.split('T')[0]}</span>
