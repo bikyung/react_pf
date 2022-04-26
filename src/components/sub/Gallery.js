@@ -15,17 +15,12 @@ function Gallery() {
 
 	const { flickr, err } = useSelector((state) => state.flickrReducer);
 	const dispatch = useDispatch();
-	console.log(err);
 
 	const [opt, setOpt] = useState({ type: 'interest' });
 
 	useEffect(() => {
 		dispatch({ type: 'FLICKR_START', opt });
 	}, [opt]);
-
-	const initGallery = () => {
-		setOpt({ type: 'interest' });
-	};
 
 	const searchTag = () => {
 		const tag = input.current.value;
@@ -45,8 +40,6 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<button onClick={initGallery}>갤러리 초기화</button>
-
 				{loading ? (
 					<img className='loading' src={path + '/img/loading.gif'} />
 				) : null}
