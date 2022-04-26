@@ -6,9 +6,9 @@
          "pic": "department/member1.jpg"
       },
       {
-         "name": "",
-         "position": "",
-         "pic": "department/member13.png"
+         "name": "AMOLIA",
+         "position": "Director",
+         "pic": "department/member13.jpg"
       },
       {
          "name": "SOPHIA",
@@ -31,9 +31,9 @@
          "pic": "department/member5.jpg"
       },
       {
-         "name": "",
-         "position": "",
-         "pic": "department/member13.png"
+         "name": "GASHIP",
+         "position": "Director Managing Executive Officer",
+         "pic": "department/member14.jpg"
       },
       {
          "name": "MADELINE",
@@ -48,12 +48,12 @@
       {
          "name": "asdasdasdasd",
          "position": "asdasdasdsad",
-         "pic": "department/member13.png"
+         "pic": "department/member13.jpg"
       },
       {
-         "name": "",
-         "position": "",
-         "pic": "department/member13.png"
+         "name": "MOMO",
+         "position": "Outside Director",
+         "pic": "department/member15.jpg"
       },
       {
          "name": "HAILEY",
@@ -76,13 +76,13 @@
          "pic": "department/member9.jpg"
       },
       {
-         "name": "",
-         "position": "",
-         "pic": "department/member13.png"
+         "name": "WOLTER",
+         "position": "Supervisory Committee Member",
+         "pic": "department/member16.jpg"
       },
       {
          "name": "LORA",
-         "position": "Supervisory Committee Membe",
+         "position": "Supervisory Committee Member",
          "pic": "department/member10.jpg"
       }
    ]
