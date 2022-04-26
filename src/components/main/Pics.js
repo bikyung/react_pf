@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 function Pics() {
 	const path = process.env.PUBLIC_URL;
 	const { flickr } = useSelector((state) => state.flickrReducer);
-	console.log(flickr);
-	const [img, setImg] = useState([]);
+	const [nimg, setImg] = useState([]);
 
 	return (
 		<section id='pics' className='myScroll'>

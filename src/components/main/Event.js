@@ -23,7 +23,6 @@ function Event() {
 	useEffect(() => {
 		localStorage.setItem('posts', JSON.stringify(posts));
 	}, []);
-	console.log(posts);
 
 	return (
 		<section id='Event' className='myScroll'>
