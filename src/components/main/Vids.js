@@ -6,9 +6,22 @@ import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 function Vids() {
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
+	console.log(vidData);
 	const [index, setIndex] = useState(0);
 	const pop = useRef(null);
 
+	function getThumbnailUrl(thumbnails) {
+		const { high, medium, standard } = thumbnails;
+		if (high) {
+			return high.url;
+		} else if (medium) {
+			return medium.url;
+		} else if (standard) {
+			return standard.url;
+		} else {
+			return '';
+		}
+	}
 	return (
 		<>
 			<section id='vids' className='myScroll'>
@@ -27,7 +40,11 @@ function Vids() {
 												setIndex(idx);
 												pop.current.open();
 											}}>
-											<img src={vid.snippet.thumbnails.high.url} />
+											<img
+												src={getThumbnailUrl(
+													vid.snippet.thumbnails
+												)}
+											/>
 											<p>
 												{description.length > 90
 													? description.substr(0, 90) + '...'

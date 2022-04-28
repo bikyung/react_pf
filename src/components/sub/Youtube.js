@@ -7,6 +7,7 @@ import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 function Youtube() {
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
+	console.log(vidData);
 	const pop = useRef(null);
 	const [index, setIndex] = useState(0);
 	const [loading, setLoading] = useState(false);
@@ -16,6 +17,19 @@ function Youtube() {
 			setLoading(true);
 		}
 	}, [vidData]);
+
+	function getThumbnailUrl(thumbnails) {
+		const { high, medium, standard } = thumbnails;
+		if (high) {
+			return high.url;
+		} else if (medium) {
+			return medium.url;
+		} else if (standard) {
+			return standard.url;
+		} else {
+			return '';
+		}
+	}
 
 	return (
 		<>
@@ -41,7 +55,9 @@ function Youtube() {
 									pop.current.open();
 								}}>
 								<div className='pic'>
-									<img src={item.snippet.thumbnails.medium.url} />
+									<img
+										src={getThumbnailUrl(item.snippet.thumbnails)}
+									/>
 									<FontAwesomeIcon icon={faCirclePlay} />
 								</div>
 								<div className='con'>
