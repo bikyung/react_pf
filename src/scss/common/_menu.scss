@@ -1,0 +1,34 @@
+nav {
+	width: 280px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #222;
+	z-index: 20;
+	padding: 0 20px;
+	h1 {
+		max-width: 70px;
+		margin-bottom: 20px;
+		a {
+			img {
+				width: 100%;
+				height: 100%;
+				margin-top: 10px;
+			}
+		}
+	}
+	.gnb {
+		li {
+			&:hover a {
+				color: $main-color;
+			}
+			a {
+				display: block;
+				padding: 10px 0;
+				font: bold $font-middle;
+				color: #fff;
+			}
+		}
+	}
+}

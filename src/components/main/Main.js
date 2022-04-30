@@ -48,17 +48,24 @@ function Main() {
 		};
 	}, []);
 
+	useEffect(() => {}, [scrolled]);
+
 	useEffect(() => {
 		new Anime(window, {
 			prop: 'scroll',
 			value: pos.current[index],
 			duration: 500,
 		});
+		console.log(index);
 	}, [index]);
 	return (
 		<>
 			<main ref={main}>
-				<Header type={'main'} logoSrc={`${path}/img/logo.png`} />
+				<Header
+					type={'main'}
+					logoSrc={`${path}/img/logo.png`}
+					className='myScroll'
+				/>
 				<Visual />
 				<Photo scrolled={scrolled} posStart={pos.current[1]} />
 				<Vids scrolled={scrolled} posStart={pos.current[2]} />

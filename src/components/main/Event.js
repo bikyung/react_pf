@@ -45,6 +45,15 @@ function Event() {
 							}
 						})}
 					</ul>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Cupiditate accusantium fugiat natus inventore sint
+						reprehenderit porro, et doloremque similique aperiam excepturi
+						distinctio illo quam incidunt nostrum voluptatem alias aliquid
+						repudiandae possimus. Explicabo corporis, fuga fugiat corrupti
+						iusto consequatur eos hic non error. Dolore explicabo aut
+						expedita, rem tempore consequuntur officiis?
+					</p>
 				</div>
 			</div>
 		</section>

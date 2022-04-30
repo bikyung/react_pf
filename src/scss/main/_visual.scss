@@ -2,7 +2,7 @@
 	width: 100%;
 	height: 100vh;
 	position: relative;
-	z-index: 1;
+	z-index: 10;
 	margin-bottom: 100px;
 
 	.swiper {
@@ -19,10 +19,12 @@
 			}
 			.info {
 				position: absolute;
-				margin-left: 100px;
+				padding-left: 100px;
 				left: 0;
 				top: 20%;
 				z-index: 10;
+				width: 40%;
+
 				h2 {
 					color: #fff;
 					font: bold 80px/1 'Oswald';
@@ -30,9 +32,8 @@
 					letter-spacing: 1px;
 				}
 				p {
-					width: 40%;
 					color: #eee;
-					font: 20px/1.5 'pretendard';
+					font: $font-middle;
 				}
 			}
 			.conBox {
@@ -41,7 +42,7 @@
 				align-items: center;
 
 				.con {
-					background: rgba(20, 88, 63, 0.8);
+					background: $main-color;
 					width: 50px;
 					height: 50px;
 					border-radius: 50%;
@@ -57,13 +58,13 @@
 				h3 {
 					margin-left: 30px;
 					color: #fff;
-					font: bold 20px/1 'pretendard';
+					font: bold $font-large;
 					padding: 10px 0;
 					position: relative;
 					transition: 0.7s;
 					cursor: pointer;
 					&:hover {
-						color: rgba(20, 88, 63, 0.8);
+						color: $main-color;
 						transition: 0.7s;
 					}
 					&:hover::after {
@@ -80,6 +81,58 @@
 						height: 3px;
 						transform: translateY(50px);
 						transition: 0.7s;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* tablet -----------------------------------------------------*/
+
+@media screen and (max-width: $tablet) {
+	#visual {
+		.swiper {
+			.swiper-slide {
+				.info {
+					padding-left: 20px;
+					width: 70%;
+
+					h2 {
+						font: $font-big;
+						margin-bottom: 10px;
+					}
+					p {
+						color: #eee;
+						font: $font-small;
+					}
+				}
+			}
+		}
+	}
+	.btns {
+		display: none;
+	}
+}
+
+/* mobile -------------------------------------------------------------*/
+
+@media screen and (max-width: $mobile) {
+	#visual {
+		.swiper {
+			.swiper-slide {
+				.info {
+					padding-left: 20px;
+					width: 100%;
+
+					h2 {
+						font: $font-large;
+						font-family: 'Oswald';
+						margin-bottom: 10px;
+					}
+					p {
+						color: #eee;
+						font: $font-smaller;
 					}
 				}
 			}
