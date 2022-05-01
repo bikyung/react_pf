@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import Layout from '../common/Layout';
+import { useSelector } from 'react-redux';
 
 function News() {
 	const input = useRef(null);
 	const textarea = useRef(null);
 	const editInput = useRef(null);
 	const editTextarea = useRef(null);
+	const path = process.env.PUBLIC_URL;
+	const news = useSelector((state) => state.newsReducer.news);
 
 	const getLocalData = () => {
 		let data = localStorage.getItem('posts');
@@ -81,6 +84,22 @@ function News() {
 
 	return (
 		<Layout name={'News'}>
+			<div className='wrap1'>
+				{news.map((data, idx) => {
+					return (
+						<article key={idx}>
+							<div className='pic1'>
+								<img src={`${path}/img/${data.pic}`} />
+							</div>
+							<div className='desc'>
+								<h2>{data.title}</h2>
+								<p>{data.detail}</p>
+								<span>{data.date}</span>
+							</div>
+						</article>
+					);
+				})}
+			</div>
 			<div className='con'>
 				<article>
 					<h2>Need a help?</h2>

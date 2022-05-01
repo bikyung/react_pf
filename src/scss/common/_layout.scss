@@ -21,10 +21,10 @@
 			height: 100%;
 			.infoTxt {
 				position: absolute;
-				left: 0;
+				left: 10px;
 				bottom: -50px;
 				span {
-					font: 18px/1 'pretendard';
+					font: $font-middle;
 					&:nth-child(1) {
 						margin-left: 10px;
 						margin-right: 20px;
@@ -37,23 +37,13 @@
 				h2 {
 					margin-top: 10px;
 					font: bold 120px/1 'pretendard';
-					color: rgba(20, 88, 63, 0.8);
+					color: $main-color;
 				}
 				h3 {
 					font: bold 120px/1 'Oswald';
-					color: rgba(20, 88, 63, 0.8);
+					color: $main-color;
 				}
 			}
-		}
-
-		.pic {
-			width: 100%;
-			height: 245px;
-		}
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
 		}
 	}
 
@@ -74,11 +64,53 @@
 	}
 }
 
+/*tablet -----------------------------------------------------------------*/
+
 @media screen and (max-width: $tablet) {
 	.content {
+		figure {
+			.info {
+				.infoTxt {
+					bottom: -45px;
+					span {
+						font: $font-smaller;
+					}
+					h2 {
+						font: bold 100px/1 'pretendard';
+					}
+					h3 {
+						font: bold 100px/1 'Oswald';
+					}
+				}
+			}
+		}
+
 		> .inner {
 			width: 100%;
-			padding: 0px 40px;
+			padding: 10px;
+		}
+	}
+}
+
+/*mobile -----------------------------------------------------------------*/
+
+@media screen and (max-width: $mobile) {
+	.content {
+		figure {
+			.info {
+				.infoTxt {
+					bottom: -25px;
+					span {
+						font: $font-smaller;
+					}
+					h2 {
+						font: bold 65px/1 'pretendard';
+					}
+					h3 {
+						font: bold 65px/1 'Oswald';
+					}
+				}
+			}
 		}
 	}
 }

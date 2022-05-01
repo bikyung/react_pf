@@ -14,13 +14,14 @@
 					border-bottom: 1px solid #e5e5e5;
 					padding-bottom: 20px;
 					h2 {
-						font: bold 24px/1 'Oswald';
+						font: bold $font-large;
+						font-family: 'Oswald';
 						margin-bottom: 15px;
 					}
 					p {
-						font: 18px/1.5 'pretendard';
+						font: $font-small;
 						margin-bottom: 15px;
-						color: #999;
+						color: $sub-color;
 					}
 					&:last-child {
 						display: flex;
@@ -47,7 +48,8 @@
 			.txt2 {
 				flex: 1 65%;
 				h2 {
-					font: bold 30px/1 'Oswald';
+					font: $font-large;
+					font-family: 'Oswald';
 					padding-bottom: 10px;
 					border-bottom: 1px solid #e5e5e5;
 					margin-bottom: 50px;
@@ -85,7 +87,7 @@
 									padding: 20px;
 								}
 								input[type='submit'] {
-									background: rgba(20, 88, 63, 0.8);
+									background: $main-color;
 									color: #fff;
 									cursor: pointer;
 								}
@@ -114,26 +116,29 @@
 							border-bottom: none;
 						}
 						h2 {
-							font: bold 20px/1 'Oswald';
+							font: bold $font-middle;
+							font-family: 'Oswald';
 							margin-bottom: 10px;
 						}
 						h3 {
-							font: 18px/1 'Oswald';
+							font: $font-small;
+							font-family: 'Oswald';
 							margin-bottom: 10px;
 						}
 						span {
-							font: 16px/1 'Oswald';
+							font: $font-smaller;
+							font-family: 'Oswald';
 						}
 						&:hover {
 							filter: grayscale(0) brightness(120%);
 							h2 {
-								color: rgba(20, 88, 63, 0.8);
+								color: $main-color;
 							}
 							h3 {
-								color: rgba(20, 88, 63, 0.8);
+								color: $main-color;
 							}
 							span {
-								color: rgba(20, 88, 63, 0.8);
+								color: $main-color;
 							}
 						}
 						&::after {
@@ -150,12 +155,12 @@
 					}
 				}
 				button {
-					margin-top: 26px;
-					padding: 19px;
+					padding: 12px;
 					width: 100%;
 					cursor: pointer;
-					font: bold 16px/1 'Oswald';
-					background: rgba(20, 88, 63, 0.8);
+					font: bold $font-small;
+					font-family: 'Oswald';
+					background: $main-color;
 					color: #fff;
 					border: none;
 					&:hover {
@@ -166,6 +171,119 @@
 			#map {
 				flex: 1 75%;
 				height: 100%;
+			}
+		}
+	}
+}
+
+/* tablet --------------------------------------------------------------------*/
+
+@media screen and (max-width: $tablet) {
+	.Contact {
+		.inner {
+			width: 100%;
+			.wrap {
+				.txt1 {
+					margin-right: 10px;
+					flex: 1 50%;
+					article {
+						p {
+							font: $font-smaller;
+						}
+					}
+				}
+				.txt2 {
+					flex: 1 50%;
+					h2 {
+						font: $font-large;
+						font-family: 'Oswald';
+						padding-bottom: 10px;
+						border-bottom: 1px solid #e5e5e5;
+						margin-bottom: 50px;
+					}
+					table {
+						width: 100%;
+						tbody {
+							tr {
+								width: 100%;
+								td {
+									width: 100%;
+									input {
+										display: block;
+										margin-right: 0;
+										margin-bottom: 20px;
+										width: 100%;
+									}
+									textarea {
+										margin: 10px 0 40px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.map_wrap {
+				.map_con {
+					.branch {
+						li {
+							border-bottom: 1px solid $sub2-color;
+							padding: 29.5px 0 30px 5px;
+							h2 {
+								font: bold $font-middle;
+							}
+							h3 {
+								font: $font-smaller;
+							}
+							span {
+								font: $font-smaller;
+							}
+							&::after {
+								left: 0;
+								top: 0;
+								background: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* mobile --------------------------------------------------------------------*/
+
+@media screen and (max-width: $mobile) {
+	.Contact {
+		.inner {
+			width: 100%;
+			.wrap {
+				flex-direction: column;
+			}
+			.map_wrap {
+				margin-top: 30px;
+				flex-direction: column;
+				.map_con {
+					.branch {
+						li {
+							border-bottom: 1px solid $sub2-color;
+							padding: 10px;
+							display: flex;
+							align-items: center;
+							h2 {
+								font: bold $font-small;
+								margin-right: 30px;
+								margin-bottom: 0;
+							}
+							h3 {
+								display: none;
+							}
+							span {
+								font: $font-smaller;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

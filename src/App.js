@@ -22,6 +22,7 @@ function App() {
 	useEffect(() => {
 		dispatch({ type: types.MEMBER.start });
 		dispatch({ type: types.YOUTUBE.start });
+		dispatch({ type: types.NEWS.start });
 		dispatch({ type: types.FLICKR.start, opt: { type: 'interest' } });
 	}, []);
 

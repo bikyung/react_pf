@@ -17,6 +17,7 @@ function Join() {
 	const [success, setSuccess] = useState(false);
 	const [isSubmit, setIsSubmit] = useState(false);
 	const textarea = useRef(null);
+	const path = process.env.PUBLIC_URL;
 	const check = (val) => {
 		const errs = {};
 		const eng = /[a-zA-Z]/;
@@ -96,7 +97,6 @@ function Join() {
 	};
 
 	useEffect(() => {
-		//객체의 키값을 반환하는 메서드
 		const len = Object.keys(err).length;
 
 		if (len === 0 && isSubmit) {
@@ -121,6 +121,27 @@ function Join() {
 					sapiente ratione eum excepturi, eveniet porro.
 				</p>
 			</div>
+			<div className='member_wrap'>
+				<article>
+					<div className='pic'>
+						<img src={`${path}/img/join/join1.jpg`} />
+						<h3>PROMOTION</h3>
+					</div>
+				</article>
+				<article>
+					<div className='pic'>
+						<img src={`${path}/img/join/join2.jpg`} />
+						<h3>UNIVERSE</h3>
+					</div>
+				</article>
+				<article>
+					<div className='pic'>
+						<img src={`${path}/img/join/join3.jpg`} />
+						<h3>SUPPORT</h3>
+					</div>
+				</article>
+			</div>
+
 			<div className='membership'>
 				<h2>Membership Terms and Conditions</h2>
 				<textarea

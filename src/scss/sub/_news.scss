@@ -1,23 +1,73 @@
 .News {
 	.inner {
+		.wrap1 {
+			width: 100%;
+			margin-bottom: 50px;
+			article {
+				display: flex;
+
+				&:hover {
+					.pic1 {
+						img {
+							transform: scale(1.1);
+							filter: grayscale(0) brightness(110%);
+						}
+					}
+				}
+				&:nth-of-type(even) {
+					justify-content: flex-end;
+					flex-direction: row-reverse;
+				}
+				.pic1 {
+					flex: 1 50%;
+					font-size: 0;
+					overflow: hidden;
+					img {
+						width: 100%;
+						transition: 0.7s;
+						filter: grayscale(1);
+					}
+				}
+				.desc {
+					flex: 1 50%;
+					padding: 20px;
+					h2 {
+						font: $font-large;
+						margin-bottom: 20px;
+						font-family: 'Oswald';
+						color: $main-color;
+					}
+					p {
+						font: $font-small;
+						margin-bottom: 20px;
+						color: $sub-color;
+					}
+					span {
+						font: bold $font-smaller;
+						color: $main-color;
+					}
+				}
+			}
+		}
 		.con {
 			margin-bottom: 100px;
 			display: flex;
 			gap: 10px;
 			article {
 				border: 1px solid #000;
-				background: rgba(20, 88, 63, 0.8);
+				background: $main-color;
 
 				h2 {
-					font: bold 24px/1 'Oswald';
+					font: bold $font-middle;
+					font-family: 'Oswald';
 					margin-bottom: 20px;
 					text-align: center;
 					padding: 10px;
 					color: #fff;
 				}
 				p {
-					font: 16px/1 'pretendard';
-					color: #bbb;
+					font: $font-smaller;
+					color: $sub2-color;
 					text-align: center;
 					margin-bottom: 20px;
 					padding: 0 10px;
@@ -33,9 +83,9 @@
 				padding: 20px;
 				margin-right: 3%;
 				position: relative;
-				background: rgba(20, 88, 63, 0.8);
+				background: $main-color;
 				h2 {
-					font: bold 24px/1 'Oswald';
+					font: bold $font-middle;
 					margin-bottom: 30px;
 					color: #fff;
 				}
@@ -60,13 +110,14 @@
 						width: 48%;
 						padding: 15px 0;
 						cursor: pointer;
-						font: 14px/1 'Oswald';
+						font: $font-smaller;
+						font-family: 'Oswald';
 					}
 				}
 			}
 			.showBox {
 				flex: 1 60%;
-				background: rgba(20, 88, 63, 0.8);
+				background: $main-color;
 				padding: 20px;
 				article {
 					width: 100%;
@@ -75,11 +126,11 @@
 					padding: 20px;
 					position: relative;
 					h2 {
-						font: bold 18px/1 'pretendard';
+						font: bold $font-small;
 						margin-bottom: 5px;
 					}
 					p {
-						font: 16px/1 'pretendard';
+						font: $font-smaller;
 					}
 					.btn {
 						position: absolute;
@@ -89,11 +140,85 @@
 							padding: 10px 20px;
 							margin-left: 10px;
 							cursor: pointer;
-							font: 14px/1 'Oswald';
+							font: bold $font-smaller;
+							font-family: 'Oswald';
 							&:hover {
-								background: rgba(20, 88, 63, 0.8);
+								background: $main-color;
 								color: #fff;
 							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* tablet --------------------------------------------------------*/
+
+@media screen and (max-width: $tablet) {
+	.News {
+		.inner {
+			width: 100%;
+			.wrap1 {
+				article {
+					.desc {
+						padding: 10px;
+						h2 {
+							font: bold $font-middle;
+							margin-bottom: 10px;
+						}
+						p {
+							font: $font-smaller;
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+			.con {
+				gap: 5px;
+			}
+			.wrap {
+				display: flex;
+				width: 100%;
+				flex-direction: column;
+				.inputBox {
+					flex: 1 100%;
+					margin-right: 0;
+					margin-bottom: 30px;
+					h2 {
+						font: bold $font-middle;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* mobile --------------------------------------------------------*/
+
+@media screen and (max-width: $mobile) {
+	.News {
+		.inner {
+			.wrap1 {
+				article {
+					flex-direction: column;
+					&:nth-of-type(even) {
+						flex-direction: column;
+					}
+				}
+			}
+			.con {
+				gap: 5px;
+				flex-direction: column;
+			}
+			.wrap {
+				.showBox {
+					article {
+						padding: 50px 20px;
+						.btn {
+							right: 10px;
+							top: 70%;
 						}
 					}
 				}

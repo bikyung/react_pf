@@ -47,10 +47,27 @@ const flickrReducer = (state = { flickr: [] }, action) => {
 	}
 };
 
+const newsReducer = (state = { news: [] }, action) => {
+	switch (action.type) {
+		case types.NEWS.start:
+			return { ...state };
+
+		case types.NEWS.success:
+			return { ...state, news: action.payload };
+
+		case types.NEWS.error:
+			return { ...state, error: action.payload };
+
+		default:
+			return state;
+	}
+};
+
 const reducers = combineReducers({
 	memberReducer,
 	youtubeReducer,
 	flickrReducer,
+	newsReducer,
 });
 
 export default reducers;

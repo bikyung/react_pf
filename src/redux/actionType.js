@@ -15,3 +15,9 @@ export const MEMBER = {
 	success: 'MEMBER_SUCCESS',
 	error: 'MEMBER_ERROR',
 };
+
+export const NEWS = {
+	start: 'NEWS_START',
+	success: 'NEWS_SUCCESS',
+	error: 'NEWS_ERROR',
+};

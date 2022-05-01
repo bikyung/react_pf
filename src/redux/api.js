@@ -44,3 +44,8 @@ export const getMember = async () => {
 	const url = path + '/DB/department.json';
 	return await axios.get(url);
 };
+
+export const getNews = async () => {
+	const url = path + '/DB/news.json';
+	return await axios.get(url);
+};

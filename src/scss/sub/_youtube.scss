@@ -3,18 +3,18 @@
 		margin-bottom: 50px;
 		h2 {
 			color: #000;
-			font: bold 24px/1 'pretendard';
+			font: $font-large;
 			margin-bottom: 10px;
 		}
 		h3 {
-			color: #666;
-			font: bold 20px/1 'arial';
+			color: $sub-color;
+			font: bold $font-middle;
 			margin-bottom: 10px;
 		}
 		p {
-			color: #999;
+			color: $sub2-color;
 			margin-bottom: 10px;
-			font: 13px/1 'pretendard';
+			font: $font-smaller;
 		}
 		strong {
 			color: #888;
@@ -58,7 +58,7 @@
 					top: 50%;
 					transform: translate(-50%, -50%);
 					font-size: 50px;
-					color: rgba(20, 88, 63, 0.8);
+					color: $main-color;
 					opacity: 1;
 					transition: 0.7s;
 				}
@@ -70,19 +70,19 @@
 				position: relative;
 
 				h2 {
-					font: bold 16px/1.2 'pretendard';
+					font: bold $font-small;
 					color: #333;
 					margin-bottom: 15px;
 				}
 
 				p {
-					font: 12px/1.5 'pretendard';
-					color: #666;
+					font: $font-smaller;
+					color: $sub-color;
 				}
 
 				span {
-					font: bold 12px/1 'pretendard';
-					color: #777;
+					font: bold $font-smaller;
+					color: $sub-color;
 					margin-bottom: 20px;
 					display: block;
 				}
@@ -90,6 +90,8 @@
 		}
 	}
 }
+
+/* tablet -------------------------------------------------------------------*/
 
 @media screen and (max-width: $tablet) {
 	.Youtube {
@@ -106,6 +108,8 @@
 		}
 	}
 }
+
+/* mobile -------------------------------------------------------------------*/
 
 @media screen and (max-width: $mobile) {
 	.Youtube {

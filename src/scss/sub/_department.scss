@@ -1,6 +1,9 @@
 .Department {
 	.sub_visual {
 		width: 100%;
+		img {
+			width: 100%;
+		}
 	}
 	.inner {
 		width: 1180px;
@@ -8,8 +11,8 @@
 		> h2 {
 			width: 50%;
 			background: #000;
-			color: #888;
-			font: bold 18px/1 'pretendard';
+			color: $sub-color;
+			font: bold $font-small;
 			padding: 20px 80px;
 		}
 		.wrap {
@@ -24,16 +27,17 @@
 					padding: 30px 80px;
 					position: relative;
 					h2 {
-						font: bold 50px/1.3 'pretendard';
+						font: $font-big;
+						line-height: 1.2;
 						margin-bottom: 30px;
 					}
 					p {
-						font: normal 20px/1.3 'pretendard';
+						font: $font-middle;
 						margin-bottom: 50px;
-						color: #999;
+						color: $sub-color;
 					}
 					h3 {
-						font: 24px/1 'pretendard';
+						font: $font-large;
 					}
 				}
 				.txt2 {
@@ -46,17 +50,17 @@
 						color: #fff;
 					}
 					h3 {
-						font: bold 40px/1 'pretendard';
+						font: $font-big;
 						margin-bottom: 20px;
 						color: #fff;
 					}
 					p {
-						font: normal 16px/1.3 'pretendard';
+						font: $font-smaller;
 						margin-bottom: 30px;
-						color: #999;
+						color: $sub-color;
 					}
 					h4 {
-						font: bold 20px/1 'pretendard';
+						font: bold $font-small;
 						margin-bottom: 30px;
 						padding-bottom: 30px;
 						position: relative;
@@ -186,6 +190,121 @@
 						opacity: 1;
 					}
 				}
+			}
+		}
+	}
+}
+
+/* tablet -------------------------------------------------------------------*/
+
+@media screen and (max-width: $tablet) {
+	.Department {
+		.inner {
+			width: 100%;
+			> h2 {
+				padding: 20px 0px;
+				text-align: center;
+			}
+			.wrap {
+				width: 100%;
+				.txtBox {
+					.txt1 {
+						flex: 1 55%;
+						padding: 30px 10px;
+						h2 {
+							font: bold $font-middle;
+						}
+						p {
+							font: $font-small;
+						}
+						h3 {
+							font: $font-large;
+						}
+					}
+					.txt2 {
+						flex: 1 45%;
+					}
+				}
+			}
+			.container {
+				width: 100%;
+				article {
+					display: flex;
+					flex-wrap: wrap;
+					&:nth-child(10) {
+						margin-right: 0;
+					}
+					.pic1 {
+						width: 100%;
+						height: 100%;
+						.desc {
+							h2 {
+								font: bold $font-smaller;
+								color: #fff;
+								margin-bottom: 5px;
+							}
+							h3 {
+								font: $font-smaller;
+								color: #999;
+							}
+						}
+					}
+					&:hover .pic1 {
+						.desc {
+							bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* mobile -------------------------------------------------------------------*/
+
+@media screen and (max-width: $mobile) {
+	.Department {
+		.inner {
+			width: 100%;
+			> h2 {
+				width: 100%;
+				padding: 20px 0px;
+				text-align: center;
+			}
+			.wrap {
+				width: 100%;
+				.txtBox {
+					flex-direction: column;
+					flex-wrap: wrap;
+					.txt1 {
+						flex: 1 100%;
+					}
+					.txt2 {
+						flex: 1 100%;
+					}
+				}
+				.empty {
+					display: block;
+					background: #e5e5e5;
+				}
+				.empty1 {
+					display: flex;
+					.emp1 {
+						flex: 1 10%;
+						background: #fff;
+					}
+					h3 {
+						color: $sub-color;
+						padding-top: 15px;
+						padding-right: 0;
+						font: bold $font-small;
+						text-align: center;
+					}
+				}
+			}
+			.container {
+				width: 100%;
+				display: block;
 			}
 		}
 	}
