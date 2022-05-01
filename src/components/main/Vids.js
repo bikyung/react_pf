@@ -4,10 +4,14 @@ import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
-function Vids() {
+function Vids(props) {
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
 	const [index, setIndex] = useState(0);
 	const pop = useRef(null);
+	const scrolled = props.scrolled;
+	const start = props.posStart;
+	const base = 600;
+	const position = scrolled - start + base;
 
 	function getThumbnailUrl(thumbnails) {
 		const { high, medium, standard } = thumbnails;
@@ -25,7 +29,14 @@ function Vids() {
 		<>
 			<section id='vids' className='myScroll'>
 				<div className='inner'>
-					<h2>Recent Youtube</h2>
+					<h2
+						style={
+							position >= 0
+								? { transform: `translateX(${position / 2}px)` }
+								: null
+						}>
+						Recent Youtube
+					</h2>
 					<div className='wrap'>
 						<ul className='vidList'>
 							{vidData.map((vid, idx) => {

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Popup from '../common/Popup';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,10 +8,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const path = process.env.PUBLIC_URL;
-function Pics() {
+function Pics(props) {
 	const { flickr } = useSelector((state) => state.flickrReducer);
 	const pop = useRef(null);
 	const [index, setIndex] = useState(0);
+	const scrolled = props.scrolled;
+	const start = props.posStart;
+	const base = -600;
+	const position = scrolled - start + base;
 
 	return (
 		<>
@@ -29,11 +33,25 @@ function Pics() {
 						eligendi quasi vero!
 					</p>
 					<div className='pics_con'>
-						<div className='pics1'>
+						<div
+							className='pics1'
+							style={
+								position >= 0
+									? { transform: `translateX(-${position / 2}px)` }
+									: null
+							}>
 							<img src={`${path}/img/pic2.jpg`} />
 							<img src={`${path}/img/pic4.jpg`} />
 						</div>
-						<div className='pics2'>
+						<div
+							className='pics2'
+							style={
+								position >= 0
+									? {
+											transform: `translateX(${position / 2}px)`,
+									  }
+									: null
+							}>
 							<img src={`${path}/img/pic1.jpg`} />
 							<img src={`${path}/img/pic3.jpg`} />
 						</div>
@@ -52,7 +70,6 @@ function Pics() {
 						<h2>Related Projects</h2>
 						<Swiper
 							spaceBetween={5}
-							// slidesPerView={1}
 							navigation
 							loop={true}
 							autoplay={{
@@ -89,7 +106,7 @@ function Pics() {
 												}}>
 												<div className='pic'>
 													<img
-														src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+														src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_c.jpg`}
 													/>
 												</div>
 												<div className='txt'>
@@ -111,7 +128,7 @@ function Pics() {
 						src={`https://live.staticflickr.com/${flickr[index].server}/${flickr[index].id}_${flickr[index].secret}_b.jpg`}
 					/>
 				)}
-				<span onClick={() => pop.current.close()}>Close</span>
+				<span onClick={() => pop.current.close()}>close</span>
 			</Popup>
 		</>
 	);

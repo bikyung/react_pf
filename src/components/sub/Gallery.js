@@ -13,7 +13,7 @@ function Gallery() {
 		transitionDuration: '0.5s',
 	};
 
-	const { flickr, err } = useSelector((state) => state.flickrReducer);
+	const { flickr, error } = useSelector((state) => state.flickrReducer);
 	const dispatch = useDispatch();
 
 	const [opt, setOpt] = useState({ type: 'interest' });

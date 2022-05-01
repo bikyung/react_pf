@@ -1,12 +1,25 @@
 import React from 'react';
 
-function Photo() {
+function Photo(props) {
 	const path = process.env.PUBLIC_URL;
+	const scrolled = props.scrolled;
+	const start = props.posStart;
+	const base = 500;
+	const position = scrolled - start + base;
 	return (
 		<>
 			<section id='Photo' className='myScroll'>
 				<div className='inner'>
-					<h2>Schedule Content</h2>
+					<h2
+						style={
+							position >= 0
+								? {
+										transform: `translateX(${position / 2}px)`,
+								  }
+								: null
+						}>
+						Schedule Content
+					</h2>
 					<div className='wrap'>
 						<div className='photo'>
 							<img src={`${path}/img/section1.jpg`} />
