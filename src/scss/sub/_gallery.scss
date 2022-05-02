@@ -4,7 +4,7 @@
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -34%);
 	}
 	.search {
 		display: flex;
@@ -37,7 +37,7 @@
 				border: none;
 				background: transparent;
 				margin-right: 20px;
-				font: bold 16px/1 'pretendard';
+				font: bold $font-small;
 				cursor: pointer;
 			}
 		}
@@ -76,7 +76,7 @@
 				> .inner {
 					width: 100%;
 					background: #fff;
-					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 					padding: 10px;
 					.pic {
 						width: 100%;
@@ -94,13 +94,13 @@
 						padding: 20px;
 						opacity: 0;
 						h2 {
-							font: bold 14px/1.2 'arial';
+							font: bold $font-smaller;
 							color: #fff;
 							margin-bottom: 5px;
 						}
 						p {
-							font: bold 12px/1.2 'arial';
-							color: #aaa;
+							font: bold $font-smaller;
+							color: $sub2-color;
 							margin-bottom: 10px;
 						}
 					}
@@ -110,13 +110,46 @@
 	}
 }
 
+/* tablet --------------------------------------------------------------*/
+
 @media screen and (max-width: $tablet) {
-	.gallery > .inner .frame article {
-		width: calc(100% / 2);
+	.Gallery {
+		.search {
+			flex-direction: column;
+
+			.searchMenu {
+				button {
+					font: bold $font-smaller;
+				}
+			}
+		}
+		> .inner {
+			transition: 0s;
+			.frame {
+				article {
+					width: calc(100% / 2);
+				}
+			}
+		}
 	}
 }
+
+/* tablet --------------------------------------------------------------*/
+
 @media screen and (max-width: $mobile) {
-	.gallery > .inner .frame article {
-		width: calc(100% / 1);
+	.Gallery {
+		.search {
+			align-items: center;
+			.searchMenu {
+				margin-bottom: 30px;
+			}
+		}
+		> .inner {
+			.frame {
+				article {
+					width: calc(100% / 1);
+				}
+			}
+		}
 	}
 }

@@ -13,31 +13,48 @@ function Gallery() {
 		transitionDuration: '0.5s',
 	};
 
-	const { flickr, error } = useSelector((state) => state.flickrReducer);
+	const { flickr } = useSelector((state) => state.flickrReducer);
 	const dispatch = useDispatch();
-
-	const [opt, setOpt] = useState({ type: 'interest' });
-
-	useEffect(() => {
-		dispatch({ type: 'FLICKR_START', opt });
-	}, [opt]);
-
-	const searchTag = () => {
-		const tag = input.current.value.trim();
-		setOpt({ type: 'search', tags: tag });
-	};
 
 	const [index, setIndex] = useState(0);
 	const [loading, setLoading] = useState(true);
 	const [enableClick, setEnableClick] = useState(true);
+	const [opt, setOpt] = useState({ type: 'interest' });
 
 	const frame = useRef(null);
 	const input = useRef(null);
 	const pop = useRef(null);
 
+	const searchTag = () => {
+		const tag = input.current.value.trim();
+		setOpt({ type: 'search', tags: tag });
+		setEnableClick(false);
+		setLoading(true);
+		if (!tag) {
+			alert('검색어를 입력하세요.');
+			return;
+		}
+		endLoading();
+	};
+
+	const initLoading = () => {
+		setTimeout(() => {
+			setLoading(true);
+		}, 1000);
+	};
+
+	const endLoading = () => {
+		setTimeout(() => {
+			frame.current.classList.add('on');
+			setLoading(false);
+			setTimeout(() => setEnableClick(true), 1000);
+		}, 1000);
+	};
+
 	useEffect(() => {
-		frame.current.classList.add('on');
-	}, []);
+		dispatch({ type: 'FLICKR_START', opt });
+		endLoading();
+	}, [opt]);
 
 	return (
 		<>
@@ -54,7 +71,8 @@ function Gallery() {
 									if (enableClick) {
 										setEnableClick(false);
 										setLoading(true);
-										frame.current.classList.remove('on');
+										setOpt({ type: 'album' });
+										initLoading();
 									}
 								}}>
 								ALBUM
@@ -66,7 +84,8 @@ function Gallery() {
 									if (enableClick) {
 										setEnableClick(false);
 										setLoading(true);
-										frame.current.classList.remove('on');
+										setOpt({ type: 'interest' });
+										initLoading();
 									}
 								}}>
 								INTEREST
@@ -78,7 +97,8 @@ function Gallery() {
 									if (enableClick) {
 										setEnableClick(false);
 										setLoading(true);
-										frame.current.classList.remove('on');
+										setOpt({ type: 'favorite' });
+										initLoading();
 									}
 								}}>
 								FAVORITE
@@ -91,7 +111,9 @@ function Gallery() {
 							type='text'
 							ref={input}
 							onKeyUp={(e) => {
-								if (e.key === 'Enter');
+								if (e.key === 'Enter') {
+									if (enableClick) searchTag();
+								}
 							}}
 						/>
 						<button onClick={searchTag}>

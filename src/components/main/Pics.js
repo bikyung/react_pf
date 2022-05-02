@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Popup from '../common/Popup';
 import { Swiper, SwiperSlide } from 'swiper/react';
