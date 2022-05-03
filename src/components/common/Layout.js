@@ -3,10 +3,10 @@ import React, { useEffect, useRef } from 'react';
 function Layout(props) {
 	const path = process.env.PUBLIC_URL;
 	let frame = useRef(null);
+	const cursor = useRef(null);
 
 	useEffect(() => {
 		frame.current.classList.add('on');
-
 		return;
 	}, []);
 
@@ -24,6 +24,7 @@ function Layout(props) {
 						<h3>{props.name}</h3>
 					</div>
 				</div>
+				<div className='cursor' ref={cursor}></div>
 			</figure>
 			<div className='inner'>{props.children}</div>
 		</section>

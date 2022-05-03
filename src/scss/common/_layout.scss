@@ -23,6 +23,7 @@
 				position: absolute;
 				left: 10px;
 				bottom: -50px;
+
 				span {
 					font: $font-middle;
 					&:nth-child(1) {
@@ -44,6 +45,18 @@
 					color: $main-color;
 				}
 			}
+		}
+		.cursor {
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			position: absolute;
+			border-radius: 50px;
+			z-index: 4;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+			mix-blend-mode: difference;
+			transition: transform 0.3s;
 		}
 	}
 

@@ -17,6 +17,9 @@
 				object-fit: cover;
 				z-index: -1;
 			}
+			img {
+				display: none;
+			}
 			.info {
 				position: absolute;
 				padding-left: 100px;
@@ -94,6 +97,12 @@
 	#visual {
 		.swiper {
 			.swiper-slide {
+				video {
+					display: none;
+				}
+				img {
+					display: block;
+				}
 				.info {
 					padding-left: 20px;
 					width: 70%;
