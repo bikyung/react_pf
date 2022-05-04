@@ -104,6 +104,60 @@ function Contact() {
 		}
 	};
 
+	const initVal = {
+		user: '',
+		email: '',
+		web: '',
+		comments: '',
+	};
+	const [val, setVal] = useState(initVal);
+	const [err, setErr] = useState({});
+	const [isSubmit, setIsSubmit] = useState(false);
+
+	const check = (val) => {
+		const errs = {};
+
+		if (val.user.length < 5) {
+			errs.user = '아이디를 5글자 이상 입력하세요.';
+		}
+
+		if (val.email < 5 || !/@/.test(val.email)) {
+			errs.email = '이메일은 5글자이상 @입력하세요';
+		}
+
+		if (val.web.length < 5) {
+			errs.web = '5글자 이상 입력하세요';
+		}
+
+		if (val.comments.length < 10) {
+			errs.comments = '남기는 말은 10글자 이상 입력하세요';
+		}
+
+		return errs;
+	};
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setVal({ ...val, [name]: value });
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setErr(check(val));
+	};
+
+	useEffect(() => {
+		const len = Object.keys(err).length;
+		if (len === 0 && isSubmit) {
+			alert('메세지가 성공적으로 전달 되었습니다.');
+		}
+	}, [err]);
+
+	const handleReset = () => {
+		setVal(initVal);
+		setErr({});
+	};
+
 	return (
 		<Layout name={'Contact'}>
 			<div className='wrap'>
@@ -139,49 +193,77 @@ function Contact() {
 					</article>
 				</div>
 				<div className='txt2'>
-					<h2>Get In Touch</h2>
-					<table>
-						<caption>txt양식</caption>
-						<tbody>
-							<tr>
-								<td>
-									<input
-										type='text'
-										name='user'
-										id='user'
-										placeholder='Your Name'
-									/>
-									<input
-										type='text'
-										name='email'
-										id='email'
-										placeholder='Your Email'
-									/>
-									<input
-										type='text'
-										name='web'
-										id='web'
-										placeholder='Web site'
-									/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<textarea
-										name='txt'
-										id='area'
-										cols='30'
-										rows='10'
-										placeholder='Comment'></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type='submit' value='SUBMIT' />
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<form onSubmit={handleSubmit}>
+						<fieldset>
+							<legend className='hidden'> 폼 양식</legend>
+							<h2>Get In Touch</h2>
+							<table>
+								<caption className='hidden'>txt양식</caption>
+								<tbody>
+									<tr>
+										<td>
+											<input
+												type='text'
+												name='user'
+												id='user'
+												placeholder='Your Name'
+												value={val.user}
+												onChange={handleChange}
+											/>
+											<span className='err'>{err.user}</span>
+											<input
+												type='text'
+												name='email'
+												id='email'
+												placeholder='Your Email'
+												onChange={handleChange}
+											/>
+											<span className='err'>{err.email}</span>
+											<input
+												type='text'
+												name='web'
+												id='web'
+												placeholder='Web site'
+												onChange={handleChange}
+											/>
+											<span className='err'>{err.web}</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<textarea
+												name='comments'
+												id='comments'
+												cols='30'
+												rows='10'
+												placeholder='Comment'
+												onChange={handleChange}></textarea>
+											<span className='err'>{err.comments}</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input
+												type='submit'
+												value='SUBMIT'
+												onClick={() => {
+													setIsSubmit(true);
+												}}
+											/>
+											<input
+												type='reset'
+												value='RESET'
+												onClick={() => {
+													handleReset();
+													setIsSubmit(false);
+												}}
+											/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+					</form>
 				</div>
 			</div>
 			<div className='map_wrap'>

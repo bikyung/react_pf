@@ -39,7 +39,7 @@
 								margin-right: 20px;
 								font-size: 30px;
 								cursor: pointer;
-								color: rgba(20, 88, 63, 0.8);
+								color: $main-color;
 							}
 						}
 					}
@@ -47,49 +47,76 @@
 			}
 			.txt2 {
 				flex: 1 65%;
-				h2 {
-					font: $font-large;
-					font-family: 'Oswald';
-					padding-bottom: 10px;
-					border-bottom: 1px solid #e5e5e5;
-					margin-bottom: 50px;
-				}
-				table {
-					width: 100%;
-					caption {
-						position: absolute;
-						top: -9999px;
-						opacity: 0;
-					}
-					tbody {
-						tr {
+				form {
+					fieldset {
+						border: none;
+						h2 {
+							font: $font-large;
+							font-family: 'Oswald';
+							padding-bottom: 10px;
+							border-bottom: 1px solid #e5e5e5;
+							margin-bottom: 50px;
+						}
+						table {
 							width: 100%;
-							td {
-								width: 100%;
-								input {
-									display: inline-block;
-									margin-right: 20px;
-									padding: 10px 20px;
-									outline: none;
-									border: none;
-									background: #eee;
-									width: 31.4%;
-									color: #000;
-									&:nth-child(3) {
-										margin-right: 0;
-									}
-								}
-								textarea {
-									margin: 50px 0 40px;
+							caption {
+								position: absolute;
+								top: -9999px;
+								opacity: 0;
+							}
+							tbody {
+								tr {
 									width: 100%;
-									border: none;
-									background: #eee;
-									padding: 20px;
-								}
-								input[type='submit'] {
-									background: $main-color;
-									color: #fff;
-									cursor: pointer;
+									td {
+										width: 100%;
+										position: relative;
+										input {
+											display: inline-block;
+											margin-right: 20px;
+											padding: 10px 20px;
+											outline: none;
+											border: none;
+											background: #eee;
+											width: 31.4%;
+											color: #000;
+											&:nth-of-type(3) {
+												margin-right: 0;
+											}
+										}
+										span {
+											position: absolute;
+											left: 0;
+											top: 35px;
+											color: red;
+											font-size: 12px;
+											margin-right: 20px;
+											&:nth-of-type(2) {
+												left: 34%;
+												top: 100%;
+											}
+											&:nth-of-type(3) {
+												left: 69%;
+												top: 100%;
+											}
+										}
+										textarea {
+											margin: 50px 0 40px;
+											width: 100%;
+											border: none;
+											background: #eee;
+											padding: 20px;
+										}
+										textarea ~ span {
+											left: 0%;
+											top: 87%;
+										}
+										input[type='submit'],
+										input[type='reset'] {
+											background: $main-color;
+											color: #fff;
+											cursor: pointer;
+										}
+									}
 								}
 							}
 						}
@@ -103,10 +130,15 @@
 			margin-bottom: 50px;
 			.map_con {
 				flex: 1 25%;
+				display: flex;
+				flex-direction: column;
+				align-content: space-between;
+				justify-content: space-between;
 				.branch {
 					width: 100%;
 					display: flex;
 					flex-direction: column;
+
 					li {
 						position: relative;
 						border-bottom: 1px solid #999;
@@ -193,29 +225,33 @@
 					}
 				}
 				.txt2 {
-					flex: 1 50%;
-					h2 {
-						font: $font-large;
-						font-family: 'Oswald';
-						padding-bottom: 10px;
-						border-bottom: 1px solid #e5e5e5;
-						margin-bottom: 50px;
-					}
-					table {
-						width: 100%;
-						tbody {
-							tr {
-								width: 100%;
-								td {
-									width: 100%;
-									input {
-										display: block;
-										margin-right: 0;
-										margin-bottom: 20px;
-										width: 100%;
-									}
-									textarea {
-										margin: 10px 0 40px;
+					form {
+						fieldset {
+							border: none;
+							table {
+								tbody {
+									tr {
+										td {
+											input {
+												display: block;
+												margin-bottom: 30px;
+												width: 100%;
+											}
+											span {
+												margin-right: 0;
+												&:nth-of-type(2) {
+													left: 0;
+													top: 52%;
+												}
+												&:nth-of-type(3) {
+													left: 0;
+													top: 85%;
+												}
+											}
+											textarea {
+												margin: 20px 0 30px;
+											}
+										}
 									}
 								}
 							}

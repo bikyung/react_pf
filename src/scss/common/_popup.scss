@@ -1,7 +1,7 @@
 .popup {
 	width: 100%;
-	height: 100vh;
-	padding: 5vw;
+	height: 100%;
+	padding: 15vw 20vw;
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -48,5 +48,21 @@
 				color: #000;
 			}
 		}
+	}
+}
+
+/* tablet ------------------------------------------------------*/
+
+@media screen and (max-width: $tablet) {
+	.popup {
+		padding: 10vw;
+	}
+}
+
+/* mobile ------------------------------------------------------*/
+
+@media screen and (max-width: $mobile) {
+	.popup {
+		padding: 30vw 2vw;
 	}
 }
