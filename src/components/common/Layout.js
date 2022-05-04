@@ -4,10 +4,30 @@ function Layout(props) {
 	const path = process.env.PUBLIC_URL;
 	let frame = useRef(null);
 	const cursor = useRef(null);
+	let isCursor = false;
+
+	const handleMove = (e) => {
+		if (isCursor) {
+			cursor.current.style.left = e.clientX - 120 + 'px';
+			cursor.current.style.top = e.clientY - 250 + 'px';
+		}
+	};
 
 	useEffect(() => {
+		const figure = frame.current.querySelector('figure');
+		figure.addEventListener('mouseenter', () => {
+			isCursor = true;
+			cursor.current.style.display = 'block';
+		});
+		figure.addEventListener('mouseleave', () => {
+			isCursor = false;
+			cursor.current.style.display = 'none';
+		});
+
 		frame.current.classList.add('on');
-		return;
+		window.addEventListener('mousemove', handleMove);
+
+		return () => window.removeEventListener('mousemove', handleMove);
 	}, []);
 
 	return (
@@ -22,9 +42,9 @@ function Layout(props) {
 						<span>{props.name}</span>
 						<h2>Our</h2>
 						<h3>{props.name}</h3>
+						<div className='cursor' ref={cursor}></div>
 					</div>
 				</div>
-				<div className='cursor' ref={cursor}></div>
 			</figure>
 			<div className='inner'>{props.children}</div>
 		</section>
