@@ -9,7 +9,7 @@ function Layout(props) {
 	const handleMove = (e) => {
 		if (isCursor) {
 			cursor.current.style.left = e.clientX - 120 + 'px';
-			cursor.current.style.top = e.clientY - 250 + 'px';
+			cursor.current.style.top = e.clientY - 260 + 'px';
 		}
 	};
 
