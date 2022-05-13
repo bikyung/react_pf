@@ -14,7 +14,7 @@ function Pics(props) {
 	const [index, setIndex] = useState(0);
 	const scrolled = props.scrolled;
 	const start = props.posStart;
-	const base = -600;
+	const base = -800;
 	const position = scrolled - start + base;
 
 	return (

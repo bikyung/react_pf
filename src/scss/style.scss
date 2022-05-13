@@ -11,14 +11,9 @@ $sub-color: #777;
 $sub2-color: #aaa;
 $white-color: #fff;
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Oswald:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Berkshire+Swash&display=swap');
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 @import 'common/reset';
 @import 'common/header';

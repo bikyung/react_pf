@@ -27,6 +27,9 @@
 				transition-duration: 0.7s;
 				span {
 					font: $font-middle;
+					&:hover ~ .cursor {
+						transform: scale(15) rotateY(720deg);
+					}
 					&:nth-child(1) {
 						margin-left: 10px;
 						margin-right: 20px;
@@ -35,23 +38,20 @@
 							margin-left: 20px;
 						}
 					}
-					&:hover ~ .cursor {
-						transform: scale(8) rotateY(720deg);
-					}
 				}
 				h2 {
 					margin-top: 10px;
 					font: bold 120px/1 'pretendard';
 					color: $main-color;
 					&:hover ~ .cursor {
-						transform: scale(20);
+						transform: scale(15) rotateY(360deg);
 					}
 				}
 				h3 {
 					font: bold 120px/1 'Oswald';
 					color: $main-color;
 					&:hover ~ .cursor {
-						transform: scale(10) rotateX(720deg);
+						transform: scale(15) rotateX(720deg);
 						border-radius: 0;
 					}
 				}

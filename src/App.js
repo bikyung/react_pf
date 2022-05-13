@@ -34,7 +34,7 @@ function App() {
 				</Route>
 
 				<Route path='/'>
-					<Header type={'sub'} />
+					<Header />
 				</Route>
 			</Switch>
 

@@ -68,10 +68,10 @@ function Main() {
 				/>
 				<Visual />
 				<Photo scrolled={scrolled} posStart={pos.current[1]} />
-				<Vids scrolled={scrolled} posStart={pos.current[3]} />
+				<Vids scrolled={scrolled} posStart={pos.current[2]} />
 				<TextContent scrolled={scrolled} posStart={pos.current[4]} />
 				<Pics scrolled={scrolled} posStart={pos.current[5]} />
-				<Event scrolled={scrolled} posStart={pos.current[6]} />
+				<Event />
 				<Btns setIndex={setIndex} />
 			</main>
 		</>

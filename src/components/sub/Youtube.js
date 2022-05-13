@@ -7,7 +7,6 @@ import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 function Youtube() {
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
-	console.log(vidData);
 	const pop = useRef(null);
 	const [index, setIndex] = useState(0);
 	const [loading, setLoading] = useState(false);
