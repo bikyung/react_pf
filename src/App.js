@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import * as types from './redux/actionType';
 
 import './scss/style.scss';
@@ -14,7 +15,6 @@ import Gallery from './components/sub/Gallery';
 import News from './components/sub/News';
 import Contact from './components/sub/Contact';
 import Join from './components/sub/Join';
-import { useEffect } from 'react';
 
 function App() {
 	const dispatch = useDispatch();

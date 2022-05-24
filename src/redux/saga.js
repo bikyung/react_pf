@@ -1,7 +1,6 @@
 import { takeLatest, all, put, fork, call } from 'redux-saga/effects';
 import { getFlickr, getYoutube, getMember, getNews } from './api';
 import * as types from './actionType';
-import { type } from '@testing-library/user-event/dist/type';
 
 export default function* rootSaga() {
 	yield all([

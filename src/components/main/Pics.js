@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Popup from '../common/Popup';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -128,7 +128,7 @@ function Pics(props) {
 						src={`https://live.staticflickr.com/${flickr[index].server}/${flickr[index].id}_${flickr[index].secret}_b.jpg`}
 					/>
 				)}
-				<span onClick={() => pop.current.close()}>close</span>
+				<span onClick={() => pop.current.close()}>Close</span>
 			</Popup>
 		</>
 	);
