@@ -56,6 +56,7 @@ function Gallery() {
 		endLoading();
 	}, [opt]);
 
+	console.log(flickr[index]);
 	return (
 		<>
 			<Layout name={'Gallery'}>
@@ -149,7 +150,6 @@ function Gallery() {
 					</Masonry>
 				</div>
 			</Layout>
-
 			<Popup ref={pop}>
 				{flickr.length !== 0 && (
 					<img

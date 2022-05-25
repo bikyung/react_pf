@@ -17,6 +17,8 @@ function Pics(props) {
 	const base = -800;
 	const position = scrolled - start + base;
 
+	console.log(flickr[index]);
+
 	return (
 		<>
 			<section id='pics' className='myScroll'>
@@ -96,12 +98,12 @@ function Pics(props) {
 							}}
 							modules={[Navigation, Pagination, Autoplay]}>
 							{flickr.map((item, idx) => {
-								if (idx < 12) {
+								if (idx < 10) {
 									return (
 										<SwiperSlide key={idx}>
 											<article
 												onClick={() => {
-													setIndex();
+													setIndex(idx);
 													pop.current.open();
 												}}>
 												<div className='pic'>
